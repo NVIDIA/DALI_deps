@@ -11,76 +11,120 @@ To obtain only the required code for DALI build (without unnecessary git history
   git submodule init
   git submodule update --depth 1 --recursive
 
-The repository comprises mostly from externally hosted subrepositories of:
+The repository consists mostly of externally hosted subrepositories:
 
-- libsndfile_ - |libsndfilelic|_
-- vorbis_, |vorbislic|_
-- ogg_, |ogglic|_
-- flac_, |flaclic|_
-- FFmpeg_, |FFmpeglic|_
-- opencv_, |opencvlic|_
-- openjpeg_, |openjpeglic|_
-- libtiff_, |libtifflic|_
-- zstd_, |zstdlic|_
-- libjpeg-turbo_, |libjpeg-turbolic|_
-- lmdb_, |lmdblic|_
-- protobuf_, |protobuflic|_
-- CMake_, |CMakelic|_
-- zlib_, |zliblic|_
-
++----------------+---------------------+---------------------+
+| Repository     | Version             | License             |
++================+=====================+=====================+
+| libsndfile_    | |libsndfilever|_    | |libsndfilelic|_    |
++----------------+---------------------+---------------------+
+| vorbis_        | |vorbisver|_        | |vorbislic|_        |
++----------------+---------------------+---------------------+
+| ogg_           | |oggver|_           | |ogglic|_           |
++----------------+---------------------+---------------------+
+| flac_          | |flacver|_          | |flaclic|_          |
++----------------+---------------------+---------------------+
+| FFmpeg_        | |FFmpegver|_        | |FFmpeglic|_        |
++----------------+---------------------+---------------------+
+| opencv_        | |opencvver|_        | |opencvlic|_        |
++----------------+---------------------+---------------------+
+| openjpeg_      | |openjpegver|_      | |openjpeglic|_      |
++----------------+---------------------+---------------------+
+| libtiff_       | |libtiffver|_       | |libtifflic|_       |
++----------------+---------------------+---------------------+
+| zstd_          | |zstdver|_          | |zstdlic|_          |
++----------------+---------------------+---------------------+
+| libjpeg-turbo_ | |libjpeg-turbover|_ | |libjpeg-turbolic|_ |
++----------------+---------------------+---------------------+
+| lmdb_          | |lmdbver|_          | |lmdblic|_          |
++----------------+---------------------+---------------------+
+| protobuf_      | |protobufver|_      | |protobuflic|_      |
++----------------+---------------------+---------------------+
+| CMake_         | |CMakever|_         | |CMakelic|_         |
++----------------+---------------------+---------------------+
+| zlib_          | |zlibver|_          | |zliblic|_          |
++----------------+---------------------+---------------------+
 
 .. _libsndfile: https://github.com/libsndfile/libsndfile
+.. |libsndfilever| replace:: 1.0.31
+.. _libsndfilever: https://github.com/libsndfile/libsndfile/releases/tag/1.0.31
 .. |libsndfilelic| replace:: LGPL v2.1 license
 .. _libsndfilelic: https://github.com/libsndfile/libsndfile/blob/master/COPYING
 
 .. _vorbis: https://github.com/xiph/vorbis
 .. |vorbislic| replace:: BSD-3 license
 .. _vorbislic: https://github.com/xiph/vorbis/blob/master/COPYING
+.. |vorbisver| replace:: 1.3.7
+.. _vorbisver: https://github.com/xiph/vorbis/releases/tag/v1.3.7
 
 .. _ogg: https://github.com/xiph/ogg
 .. |ogglic| replace:: BSD-3 license
 .. _ogglic: https://github.com/xiph/ogg/blob/master/COPYING
+.. |oggver| replace:: 1.3.4
+.. _oggver: https://github.com/xiph/ogg/releases/tag/v1.3.4
 
 .. _flac: https://github.com/xiph/flac
 .. |flaclic| replace:: LGPL v2.1 license
 .. _flaclic: https://github.com/xiph/flac/blob/master/COPYING.LGPL
+.. |flacver| replace:: 1.3.3
+.. _flacver: https://github.com/xiph/flac/releases/tag/1.3.3
 
 .. _FFmpeg: https://github.com/FFmpeg/FFmpeg
 .. |FFmpeglic| replace:: LGPL v2.1 license
 .. _FFmpeglic: https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md
+.. |FFmpegver| replace:: 4.3.2
+.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n4.3.2
 
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0
 .. _opencvlic: https://github.com/opencv/opencv/blob/master/LICENSE
+.. |opencvver| replace:: 4.5.1
+.. _opencvver: https://github.com/opencv/opencv/releases/tag/4.5.1
 
 .. _openjpeg: https://github.com/uclouvain/openjpeg
 .. |openjpeglic| replace:: BSD-2 license
 .. _openjpeglic: https://github.com/uclouvain/openjpeg/blob/master/LICENSE
+.. |openjpegver| replace:: 2.4.0
+.. _openjpegver: https://github.com/uclouvain/openjpeg/releases/tag/v2.4.0
 
 .. _libtiff: https://gitlab.com/libtiff/libtiff
 .. |libtifflic| replace:: BSD-2 license
 .. _libtifflic: https://gitlab.com/libtiff/libtiff/-/blob/master/README.md
+.. |libtiffver| replace:: 4.2.0
+.. _libtiffver: https://gitlab.com/libtiff/libtiff/-/tree/v4.2.0
 
 .. _zstd: https://github.com/facebook/zstd
 .. |zstdlic| replace:: BSD-3 license
 .. _zstdlic: https://github.com/facebook/zstd/blob/dev/LICENSE
+.. |zstdver| replace:: 1.4.9
+.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.4.9
 
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
 .. _libjpeg-turbolic: https://github.com/libjpeg-turbo/libjpeg-turbo/blob/master/LICENSE.md
+.. |libjpeg-turbover| replace:: 2.0.6
+.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.0.6
 
 .. _lmdb: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/
 .. |lmdblic| replace::	OpenLDAP Public License
-.. _lmdblic: https://github.com/libjpeg-turbo/libjpeg-turbo/blob/master/LICENSE.md
+.. _lmdblic: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/LICENSE
+.. |lmdbver| replace:: 0.9.28
+.. _lmdbver: https://github.com/LMDB/lmdb/releases/tag/LMDB_0.9.28
 
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
+.. |protobufver| replace:: 3.15.6
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v3.15.6
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
 .. _CMakelic: https://github.com/Kitware/CMake/blob/master/Copyright.txt
+.. |CMakever| replace:: 3.13.5
+.. _CMakever: https://github.com/Kitware/CMake/releases/tag/v3.13.5
 
 .. _zlib: https://github.com/madler/zlib
 .. |zliblic| replace:: zlib License
 .. _zliblic: https://github.com/madler/zlib/blob/master/README
+.. |zlibver| replace:: 1.2.11
+.. _zlibver: https://github.com/madler/zlib/releases/tag/v1.2.11
