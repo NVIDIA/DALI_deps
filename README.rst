@@ -11,7 +11,7 @@ To obtain only the required code for DALI build (without unnecessary git history
   git submodule init
   git submodule update --depth 1 --recursive
 
-The repository itself doesn't host any code, it only has subrepositories of:
+The repository comprises mostly from externally hosted subrepositories of:
 
 - libsndfile_ - |libsndfilelic|_
 - vorbis_, |vorbislic|_
