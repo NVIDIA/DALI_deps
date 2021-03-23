@@ -16,7 +16,7 @@
 
 export ROOT_DIR=$(pwd)
 export SCRIPT_DIR=$(cd $(dirname $0) && pwd)
-export INSTALL_PREFIX=${INSTALL_PREFIX:-"/usr/local"}
+export INSTALL_PREFIX=${INSTALL_PREFIX:-/usr/local}
 export CC_COMP=${CC_COMP:-gcc}
 export CXX_COMP=${CXX_COMP:-g++}
 export WITH_FFMPEG=${WITH_FFMPEG:-1}
