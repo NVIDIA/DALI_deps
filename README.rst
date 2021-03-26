@@ -66,7 +66,7 @@ The repository consists mostly of externally hosted subrepositories:
 .. _flac: https://github.com/xiph/flac
 .. |flaclic| replace:: LGPL v2.1 license
 .. _flaclic: https://github.com/xiph/flac/blob/master/COPYING.LGPL
-.. |flacver| replace:: 1.3.3
+.. |flacver| replace:: 1.3.3 (+ security patch)
 .. _flacver: https://github.com/xiph/flac/releases/tag/1.3.3
 
 .. _FFmpeg: https://github.com/FFmpeg/FFmpeg
