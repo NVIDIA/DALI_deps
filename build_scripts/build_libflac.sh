@@ -16,6 +16,9 @@
 
 # flac
 pushd third_party/flac
+
+patch --no-backup-if-mismatch -p1 < ${ROOT_DIR}/patches/0001-libFLAC-bitreader.c-Fix-out-of-bounds-read.patch
+
 ./autogen.sh
 ./configure \
   CFLAGS="-fPIC ${EXTRA_FLAC_FLAGS}" \
@@ -27,4 +30,5 @@ pushd third_party/flac
   --disable-ogg
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
+
 popd
