@@ -13,7 +13,7 @@
 # limitations under the License.
 
 #!/bin/bash -xe
-# libsnd https://developer.download.nvidia.com/compute/redist/nvidia-dali/libsndfile-1.0.28.tar.gz
+# For a snapshot of the code, see the README.rst
 pushd third_party/libsndfile
 ./autogen.sh
 ./configure \

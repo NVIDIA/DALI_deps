@@ -17,6 +17,7 @@ The repository consists mostly of externally hosted subrepositories:
 | Repository     | Version             | License             |
 +================+=====================+=====================+
 | libsndfile_    | |libsndfilever|_    | |libsndfilelic|_    |
+|                | |libsndfilesrc|_    |                     |
 +----------------+---------------------+---------------------+
 | vorbis_        | |vorbisver|_        | |vorbislic|_        |
 +----------------+---------------------+---------------------+
@@ -25,6 +26,7 @@ The repository consists mostly of externally hosted subrepositories:
 | flac_          | |flacver|_          | |flaclic|_          |
 +----------------+---------------------+---------------------+
 | FFmpeg_        | |FFmpegver|_        | |FFmpeglic|_        |
+|                | |FFmpegsrc|_        |                     |
 +----------------+---------------------+---------------------+
 | opencv_        | |opencvver|_        | |opencvlic|_        |
 +----------------+---------------------+---------------------+
@@ -50,6 +52,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libsndfilever: https://github.com/libsndfile/libsndfile/releases/tag/1.0.31
 .. |libsndfilelic| replace:: LGPL v2.1 license
 .. _libsndfilelic: https://github.com/libsndfile/libsndfile/blob/master/COPYING
+.. |libsndfilesrc| replace:: (Source Snapshot)
+.. _libsndfilesrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/libsndfile-1.0.31.tar.gz
 
 .. _vorbis: https://github.com/xiph/vorbis
 .. |vorbislic| replace:: BSD-3 license
@@ -64,9 +68,9 @@ The repository consists mostly of externally hosted subrepositories:
 .. _oggver: https://github.com/xiph/ogg/releases/tag/v1.3.4
 
 .. _flac: https://github.com/xiph/flac
-.. |flaclic| replace:: LGPL v2.1 license
-.. _flaclic: https://github.com/xiph/flac/blob/master/COPYING.LGPL
-.. |flacver| replace:: 1.3.3 (+ security patch)
+.. |flaclic| replace:: BSD-3 license (+ GPL for utils, not used by DALI)
+.. _flaclic: https://github.com/xiph/flac/blob/master/COPYING.Xiph
+.. |flacver| replace:: 1.3.3 (+ Security Patch)
 .. _flacver: https://github.com/xiph/flac/releases/tag/1.3.3
 
 .. _FFmpeg: https://github.com/FFmpeg/FFmpeg
@@ -74,6 +78,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _FFmpeglic: https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md
 .. |FFmpegver| replace:: 4.3.2
 .. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n4.3.2
+.. |FFmpegsrc| replace:: (Source Snapshot)
+.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n4.3.2.tar.gz
 
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0

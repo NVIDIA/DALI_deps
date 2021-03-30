@@ -14,8 +14,8 @@
 
 #!/bin/bash -xe
 
+# For a snapshot of the code, see the README.rst
 if [ ${WITH_FFMPEG} -gt 0 ]; then
-    # FFmpeg  https://developer.download.nvidia.com/compute/redist/nvidia-dali/ffmpeg-4.3.1.tar.bz2
     pushd third_party/FFmpeg
     ./configure \
         --prefix=${INSTALL_PREFIX} \
