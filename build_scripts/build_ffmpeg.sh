@@ -30,7 +30,7 @@ if [ ${WITH_FFMPEG} -gt 0 ]; then
         --disable-os2threads \
         --disable-dct \
         --disable-dwt \
-        --disable-error-resilience \
+        --enable-error-resilience \
         --disable-lsp \
         --disable-lzo \
         --disable-mdct \
