@@ -1,3 +1,5 @@
+#!/bin/bash -xe
+
 # Copyright (c) 2021, NVIDIA CORPORATION. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#!/bin/bash -xe
 # libtiff
 pushd third_party/libtiff
 ./autogen.sh
