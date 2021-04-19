@@ -76,16 +76,16 @@ The repository consists mostly of externally hosted subrepositories:
 .. _FFmpeg: https://github.com/FFmpeg/FFmpeg
 .. |FFmpeglic| replace:: LGPL v2.1 license
 .. _FFmpeglic: https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md
-.. |FFmpegver| replace:: 4.3.2
-.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n4.3.2
+.. |FFmpegver| replace:: 4.4
+.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n4.4
 .. |FFmpegsrc| replace:: (Source Snapshot)
-.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n4.3.2.tar.gz
+.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n4.4.tar.gz
 
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0
 .. _opencvlic: https://github.com/opencv/opencv/blob/master/LICENSE
-.. |opencvver| replace:: 4.5.1
-.. _opencvver: https://github.com/opencv/opencv/releases/tag/4.5.1
+.. |opencvver| replace:: 4.5.2
+.. _opencvver: https://github.com/opencv/opencv/releases/tag/4.5.2
 
 .. _openjpeg: https://github.com/uclouvain/openjpeg
 .. |openjpeglic| replace:: BSD-2 license
@@ -120,8 +120,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 3.15.6
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v3.15.6
+.. |protobufver| replace:: 3.15.8
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v3.15.8
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
