@@ -49,6 +49,7 @@ PACKAGE_LIST=(
     "libflac"
     "libogg"
     "libvorbis" # Install after libogg
+    "libopus"
     "libsnd"
 )
 
