@@ -40,3 +40,6 @@
 [submodule "third_party/zlib"]
 	path = third_party/zlib
 	url = https://github.com/madler/zlib
+[submodule "third_party/opus"]
+	path = third_party/opus
+	url = https://github.com/xiph/opus

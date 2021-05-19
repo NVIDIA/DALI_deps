@@ -25,6 +25,8 @@ The repository consists mostly of externally hosted subrepositories:
 +----------------+---------------------+---------------------+
 | flac_          | |flacver|_          | |flaclic|_          |
 +----------------+---------------------+---------------------+
+| opus_          | |opusver|_          | |opuslic|_          |
++----------------+---------------------+---------------------+
 | FFmpeg_        | |FFmpegver|_        | |FFmpeglic|_        |
 |                | |FFmpegsrc|_        |                     |
 +----------------+---------------------+---------------------+
@@ -72,6 +74,12 @@ The repository consists mostly of externally hosted subrepositories:
 .. _flaclic: https://github.com/xiph/flac/blob/master/COPYING.Xiph
 .. |flacver| replace:: 1.3.3 (+ Security Patch)
 .. _flacver: https://github.com/xiph/flac/releases/tag/1.3.3
+
+.. _opus: https://github.com/xiph/opus
+.. |opuslic| replace:: BSD-3 license
+.. _opuslic: https://github.com/xiph/opus/blob/master/COPYING
+.. |opusver| replace:: 1.3.1
+.. _opusver: https://github.com/xiph/opus/releases/tag/v1.3.1
 
 .. _FFmpeg: https://github.com/FFmpeg/FFmpeg
 .. |FFmpeglic| replace:: LGPL v2.1 license
