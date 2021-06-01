@@ -116,8 +116,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
 .. _libjpeg-turbolic: https://github.com/libjpeg-turbo/libjpeg-turbo/blob/master/LICENSE.md
-.. |libjpeg-turbover| replace:: 2.0.6
-.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.0.6
+.. |libjpeg-turbover| replace:: 2.1.0
+.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.1.0
 
 .. _lmdb: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/
 .. |lmdblic| replace::	OpenLDAP Public License
