@@ -104,8 +104,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libtiff: https://gitlab.com/libtiff/libtiff
 .. |libtifflic| replace:: BSD-2 license
 .. _libtifflic: https://gitlab.com/libtiff/libtiff/-/blob/master/README.md
-.. |libtiffver| replace:: 4.2.0
-.. _libtiffver: https://gitlab.com/libtiff/libtiff/-/tree/v4.2.0
+.. |libtiffver| replace:: 4.3.0
+.. _libtiffver: https://gitlab.com/libtiff/libtiff/-/tree/v4.3.0
 
 .. _zstd: https://github.com/facebook/zstd
 .. |zstdlic| replace:: BSD-3 license
