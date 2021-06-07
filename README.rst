@@ -104,32 +104,32 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libtiff: https://gitlab.com/libtiff/libtiff
 .. |libtifflic| replace:: BSD-2 license
 .. _libtifflic: https://gitlab.com/libtiff/libtiff/-/blob/master/README.md
-.. |libtiffver| replace:: 4.2.0
-.. _libtiffver: https://gitlab.com/libtiff/libtiff/-/tree/v4.2.0
+.. |libtiffver| replace:: 4.3.0
+.. _libtiffver: https://gitlab.com/libtiff/libtiff/-/tree/v4.3.0
 
 .. _zstd: https://github.com/facebook/zstd
 .. |zstdlic| replace:: BSD-3 license
 .. _zstdlic: https://github.com/facebook/zstd/blob/dev/LICENSE
-.. |zstdver| replace:: 1.4.9
-.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.4.9
+.. |zstdver| replace:: 1.5.0
+.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.5.0
 
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
 .. _libjpeg-turbolic: https://github.com/libjpeg-turbo/libjpeg-turbo/blob/master/LICENSE.md
-.. |libjpeg-turbover| replace:: 2.0.6
-.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.0.6
+.. |libjpeg-turbover| replace:: 2.1.0
+.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.1.0
 
 .. _lmdb: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/
 .. |lmdblic| replace::	OpenLDAP Public License
 .. _lmdblic: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/LICENSE
-.. |lmdbver| replace:: 0.9.28
-.. _lmdbver: https://github.com/LMDB/lmdb/releases/tag/LMDB_0.9.28
+.. |lmdbver| replace:: 0.9.29
+.. _lmdbver: https://github.com/LMDB/lmdb/releases/tag/LMDB_0.9.29
 
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 3.15.8
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v3.15.8
+.. |protobufver| replace:: 3.17.1
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v3.17.1
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
