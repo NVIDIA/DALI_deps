@@ -66,8 +66,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _ogg: https://github.com/xiph/ogg
 .. |ogglic| replace:: BSD-3 license
 .. _ogglic: https://github.com/xiph/ogg/blob/master/COPYING
-.. |oggver| replace:: 1.3.4
-.. _oggver: https://github.com/xiph/ogg/releases/tag/v1.3.4
+.. |oggver| replace:: 1.3.5
+.. _oggver: https://github.com/xiph/ogg/releases/tag/v1.3.5
 
 .. _flac: https://github.com/xiph/flac
 .. |flaclic| replace:: BSD-3 license (+ GPL for utils, not used by DALI)
@@ -128,8 +128,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 3.17.1
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v3.17.1
+.. |protobufver| replace:: 3.17.3
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v3.17.3
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
