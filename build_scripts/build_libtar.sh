@@ -17,11 +17,12 @@
 # For a snapshot of the code, see the README.rst
 pushd third_party/libtar
 autoreconf --force --install
+CC=${CC_COMP} \
+CXX=${CXX_COMP} \
 ./configure \
-    CC=${CC_COMP} \
-    CXX=${CXX_COMP} \
     ${HOST_ARCH_OPTION} \
     --prefix=${INSTALL_PREFIX}
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+cd lib
 make install
 popd
