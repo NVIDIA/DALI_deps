@@ -51,6 +51,7 @@ PACKAGE_LIST=(
     "libvorbis" # Install after libogg
     "libopus"
     "libsnd"
+    "libtar"
 )
 
 for PACKAGE in "${PACKAGE_LIST[@]}"; do
