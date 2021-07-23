@@ -19,8 +19,6 @@ The repository consists mostly of externally hosted subrepositories:
 | libsndfile_    | |libsndfilever|_    | |libsndfilelic|_    |
 |                | |libsndfilesrc|_    |                     |
 +----------------+---------------------+---------------------+
-| libtar_        | |libtarver|_        | |libtarlic|_        |
-+----------------+---------------------+---------------------+
 | vorbis_        | |vorbisver|_        | |vorbislic|_        |
 +----------------+---------------------+---------------------+
 | ogg_           | |oggver|_           | |ogglic|_           |
@@ -49,6 +47,8 @@ The repository consists mostly of externally hosted subrepositories:
 | CMake_         | |CMakever|_         | |CMakelic|_         |
 +----------------+---------------------+---------------------+
 | zlib_          | |zlibver|_          | |zliblic|_          |
++----------------+---------------------+---------------------+
+| libtar_        | |libtarver|_        | |libtarlic|_        |
 +----------------+---------------------+---------------------+
 
 .. _libsndfile: https://github.com/libsndfile/libsndfile
