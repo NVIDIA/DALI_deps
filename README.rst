@@ -19,6 +19,8 @@ The repository consists mostly of externally hosted subrepositories:
 | libsndfile_    | |libsndfilever|_    | |libsndfilelic|_    |
 |                | |libsndfilesrc|_    |                     |
 +----------------+---------------------+---------------------+
+| libtar_        | |libtarver|_        | |libtarlic|_        |
++----------------+---------------------+---------------------+
 | vorbis_        | |vorbisver|_        | |vorbislic|_        |
 +----------------+---------------------+---------------------+
 | ogg_           | |oggver|_           | |ogglic|_           |
@@ -56,6 +58,12 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libsndfilelic: https://github.com/libsndfile/libsndfile/blob/master/COPYING
 .. |libsndfilesrc| replace:: (Source Snapshot)
 .. _libsndfilesrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/libsndfile-1.0.31.tar.gz
+
+.. _libtar: https://repo.or.cz/libtar.git
+.. |libtarlic| replace:: BSD-3 license
+.. _libtarlic: https://repo.or.cz/libtar.git/blob/HEAD:/COPYRIGHT
+.. |libtarver| replace:: 1.2.20
+.. _libtarver: https://repo.or.cz/libtar.git/tag/50dcdd27a33444b974d940ed5f225a2444e5aeba
 
 .. _vorbis: https://github.com/xiph/vorbis
 .. |vorbislic| replace:: BSD-3 license
