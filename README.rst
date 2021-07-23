@@ -59,12 +59,6 @@ The repository consists mostly of externally hosted subrepositories:
 .. |libsndfilesrc| replace:: (Source Snapshot)
 .. _libsndfilesrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/libsndfile-1.0.31.tar.gz
 
-.. _libtar: https://repo.or.cz/libtar.git
-.. |libtarlic| replace:: BSD-3 license
-.. _libtarlic: https://repo.or.cz/libtar.git/blob/HEAD:/COPYRIGHT
-.. |libtarver| replace:: 1.2.20
-.. _libtarver: https://repo.or.cz/libtar.git/tag/50dcdd27a33444b974d940ed5f225a2444e5aeba
-
 .. _vorbis: https://github.com/xiph/vorbis
 .. |vorbislic| replace:: BSD-3 license
 .. _vorbislic: https://github.com/xiph/vorbis/blob/master/COPYING
@@ -150,3 +144,9 @@ The repository consists mostly of externally hosted subrepositories:
 .. _zliblic: https://github.com/madler/zlib/blob/master/README
 .. |zlibver| replace:: 1.2.11
 .. _zlibver: https://github.com/madler/zlib/releases/tag/v1.2.11
+
+.. _libtar: https://repo.or.cz/libtar.git
+.. |libtarlic| replace:: BSD-3 license
+.. _libtarlic: https://repo.or.cz/libtar.git/blob/HEAD:/COPYRIGHT
+.. |libtarver| replace:: 1.2.20
+.. _libtarver: https://repo.or.cz/libtar.git/tag/50dcdd27a33444b974d940ed5f225a2444e5aeba
