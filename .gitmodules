@@ -43,3 +43,6 @@
 [submodule "third_party/opus"]
 	path = third_party/opus
 	url = https://github.com/xiph/opus
+[submodule "third_party/libtar"]
+	path = third_party/libtar
+	url = https://repo.or.cz/libtar.git
