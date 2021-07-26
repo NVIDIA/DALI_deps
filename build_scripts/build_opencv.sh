@@ -16,7 +16,6 @@
 
 # OpenCV
 pushd third_party/opencv
-patch -p1 < ${ROOT_DIR}/patches/opencv-qnx.patch
 mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=RELEASE \
