@@ -19,8 +19,8 @@ pushd third_party/libtar
 autoreconf --force --install
 CC=${CC_COMP} \
 CXX=${CXX_COMP} \
-CFLAGS="-fPIC ${EXTRA_LIBTAR_FLAGS}" \
-CXXFLAGS="-fPIC ${EXTRA_LIBTAR_FLAGS}" \
+CFLAGS="-fPIC" \
+CXXFLAGS="-fPIC" \
 ./configure \
     ${HOST_ARCH_OPTION} \
     --prefix=${INSTALL_PREFIX} \
