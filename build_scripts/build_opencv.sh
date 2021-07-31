@@ -16,7 +16,7 @@
 
 # OpenCV
 pushd third_party/opencv
-mkdir build
+mkdir -p build
 cd build
 cmake -DCMAKE_BUILD_TYPE=RELEASE \
       -DVIBRANTE_PDK:STRING=/ \
@@ -38,6 +38,7 @@ cmake -DCMAKE_BUILD_TYPE=RELEASE \
       -DBUILD_TESTS=OFF \
       -DBUILD_PERF_TESTS=OFF \
       -DBUILD_PNG=ON \
+      -DWITH_WEBP=ON \
       -DBUILD_opencv_cudalegacy=OFF \
       -DBUILD_opencv_stitching=OFF \
       -DWITH_TBB=OFF \

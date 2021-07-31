@@ -16,7 +16,7 @@
 
 # OpenJPEG
 pushd third_party/openjpeg
-mkdir build
+mkdir -p build
 cd build
 echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
 echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
