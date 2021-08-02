@@ -16,6 +16,7 @@
 
 # For a snapshot of the code, see the README.rst
 pushd third_party/libsndfile
+patch -p1 < ${ROOT_DIR}/patches/0001-ms_adpcm-Fix-and-extend-size-checks.patch
 ./autogen.sh
 ./configure \
     CFLAGS="-fPIC ${EXTRA_LIBSND_FLAGS}" \
