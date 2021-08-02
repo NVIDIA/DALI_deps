@@ -19,9 +19,12 @@ pushd third_party/libtar
 autoreconf --force --install
 CC=${CC_COMP} \
 CXX=${CXX_COMP} \
+CFLAGS="-fPIC" \
+CXXFLAGS="-fPIC" \
 ./configure \
     ${HOST_ARCH_OPTION} \
-    --prefix=${INSTALL_PREFIX}
+    --prefix=${INSTALL_PREFIX} \
+    --disable-shared
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 cd lib
 make install
