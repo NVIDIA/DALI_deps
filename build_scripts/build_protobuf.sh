@@ -31,7 +31,7 @@ if [ "${CC_COMP}" != "gcc" ]; then
       ${HOST_ARCH_OPTION} \
       ${BUILD_ARCH_OPTION} \
       ${SYSROOT_ARG} \
-      --with-protoc=${INSTALL_PREFIX}/bin/protoc \
+      --with-protoc=${HOST_INSTALL_PREFIX}/bin/protoc \
       --prefix=${INSTALL_PREFIX}
   make -j$(nproc) install
 fi
