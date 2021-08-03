@@ -17,7 +17,7 @@
 # protobuf, make two steps for cross compilation if needed
 pushd third_party/protobuf
 ./autogen.sh
-./configure CXXFLAGS="-fPIC" --prefix=${INSTALL_PREFIX} --disable-shared 2>&1 > /dev/null
+./configure CXXFLAGS="-fPIC" --prefix=${HOST_INSTALL_PREFIX} --disable-shared 2>&1 > /dev/null
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)" 2>&1 > /dev/null
 make install 2>&1 > /dev/null
 # only when cross compiling
