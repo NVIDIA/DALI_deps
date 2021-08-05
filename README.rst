@@ -148,5 +148,5 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libtar: https://repo.or.cz/libtar.git
 .. |libtarlic| replace:: BSD-3 license
 .. _libtarlic: https://repo.or.cz/libtar.git/blob/HEAD:/COPYRIGHT
-.. |libtarver| replace:: 1.2.20
-.. _libtarver: https://repo.or.cz/libtar.git/tag/50dcdd27a33444b974d940ed5f225a2444e5aeba
+.. |libtarver| replace:: 1.2.20 + patches (master)
+.. _libtarver: https://repo.or.cz/libtar.git/tag/6d0ab4c78e7a8305c36a0c3d63fd25cd1493de65
