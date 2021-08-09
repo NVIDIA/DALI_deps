@@ -22,6 +22,7 @@ if [ ${WITH_FFMPEG} -gt 0 ]; then
     patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2020-22019.patch
     patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2020-22021.patch
     patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2020-22015.patch
+    patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2021-38114.patch
     ./configure \
         --prefix=${INSTALL_PREFIX} \
         --disable-static \
