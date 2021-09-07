@@ -89,7 +89,7 @@ The repository consists mostly of externally hosted subrepositories:
 .. |FFmpegver| replace:: 4.4 (+ Security Patch)
 .. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n4.4
 .. |FFmpegsrc| replace:: (Source Snapshot)
-.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n4.4_v2.tar.gz
+.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n4.4_v3.tar.gz
 
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0
