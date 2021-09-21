@@ -58,6 +58,7 @@ cmake -DCMAKE_BUILD_TYPE=RELEASE \
       -DINSTALL_TESTS=OFF \
       -DVIBRANTE=TRUE \
       -DWITH_CSTRIPES=OFF \
+      -DCMAKE_PREFIX_PATH=${INSTALL_PREFIX} \
       VERBOSE=1 ..
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)" install
 make install
