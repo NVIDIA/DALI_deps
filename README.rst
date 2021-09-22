@@ -130,8 +130,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 3.17.3
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v3.17.3
+.. |protobufver| replace:: 3.18.0
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v3.18.0
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
