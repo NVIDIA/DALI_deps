@@ -33,7 +33,6 @@ if [ ${WITH_FFMPEG} -gt 0 ]; then
         --disable-doc \
         --disable-avdevice \
         --disable-swresample \
-        --disable-swscale \
         --disable-postproc \
         --disable-w32threads \
         --disable-os2threads \
