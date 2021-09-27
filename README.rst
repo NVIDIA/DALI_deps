@@ -145,8 +145,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. |zlibver| replace:: 1.2.11
 .. _zlibver: https://github.com/madler/zlib/releases/tag/v1.2.11
 
-.. _libtar: https://repo.or.cz/libtar.git
+.. _libtar: https://github.com/tklauser/libtar.git
 .. |libtarlic| replace:: BSD-3 license
-.. _libtarlic: https://repo.or.cz/libtar.git/blob/HEAD:/COPYRIGHT
+.. _libtarlic: https://github.com/tklauser/libtar/blob/master/COPYRIGHT
 .. |libtarver| replace:: 1.2.20 + patches (master)
-.. _libtarver: https://repo.or.cz/libtar.git/tree/6d0ab4c78e7a8305c36a0c3d63fd25cd1493de65
+.. _libtarver: https://github.com/tklauser/libtar/commit/6379b5d2ae777dad576aeae70566740670057821
