@@ -86,10 +86,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _FFmpeg: https://github.com/FFmpeg/FFmpeg
 .. |FFmpeglic| replace:: LGPL v2.1 license
 .. _FFmpeglic: https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md
-.. |FFmpegver| replace:: 4.4.1 (+ Security Patch)
+.. |FFmpegver| replace:: 4.4.1
 .. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n4.4.1
-.. |FFmpegsrc| replace:: (Source Snapshot)
-.. _FFmpegsrc: https://github.com/FFmpeg/FFmpeg/archive/refs/tags/n4.4.1.tar.gz
 
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0
