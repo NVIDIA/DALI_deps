@@ -17,15 +17,6 @@
 # For a snapshot of the code, see the README.rst
 if [ ${WITH_FFMPEG} -gt 0 ]; then
     pushd third_party/FFmpeg
-    patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2021-33815.patch
-    patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2020-20453.patch
-    patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2020-22019.patch
-    patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2020-22021.patch
-    patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2020-22015.patch
-    patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2021-38114.patch
-    patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2021-38171.patch
-    patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2021-38291.patch
-    patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2020-22037.patch
     ./configure \
         --prefix=${INSTALL_PREFIX} \
         --disable-static \
