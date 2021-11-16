@@ -31,6 +31,6 @@ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake -DBUILD_
     CXXFLAGS="-fPIC" \
     CC=${CC_COMP} \
     CXX=${CXX_COMP} \
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+make -j"$(nproc)"
 make install
 popd

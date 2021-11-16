@@ -28,6 +28,6 @@ cmake -G"Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake -DENABLE_SHARED=
     CXXFLAGS="-fPIC" \
     CC=${CC_COMP} \
     CXX=${CXX_COMP} \
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)" 2>&1 >/dev/null
+make -j"$(nproc)" 2>&1 >/dev/null
 make install 2>&1 >/dev/null
 popd

@@ -29,6 +29,6 @@ patch -p1 < ${ROOT_DIR}/patches/0001-Fix-wget-complaing-about-expired-git.savann
     --with-zlib-include-dir=${INSTALL_PREFIX}/include \
     --with-zlib-lib-dir=${INSTALL_PREFIX}/lib         \
     --prefix=${INSTALL_PREFIX}
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+make -j"$(nproc)"
 make install
 popd

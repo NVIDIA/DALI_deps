@@ -21,6 +21,6 @@ pushd third_party/zlib
     CC=${CC_COMP} \
     CXX=${CXX_COMP} \
 ./configure --prefix=${INSTALL_PREFIX}
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+make -j"$(nproc)"
 make install
 popd

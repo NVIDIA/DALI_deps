@@ -28,7 +28,7 @@ patch --no-backup-if-mismatch -p1 < ${ROOT_DIR}/patches/0001-libFLAC-bitreader.c
   ${HOST_ARCH_OPTION} \
   --prefix=${INSTALL_PREFIX} \
   --disable-ogg
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+make -j"$(nproc)"
 make install
 
 popd

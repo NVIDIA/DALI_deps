@@ -25,7 +25,7 @@ CXXFLAGS="-fPIC" \
     ${HOST_ARCH_OPTION} \
     --prefix=${INSTALL_PREFIX} \
     --disable-shared
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+make -j"$(nproc)"
 cd lib
 make install
 popd

@@ -35,6 +35,6 @@ git tag $OPUS_VERSION || true
     ${HOST_ARCH_OPTION} \
     --prefix=${INSTALL_PREFIX}
 
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+make -j"$(nproc)"
 make install
 popd

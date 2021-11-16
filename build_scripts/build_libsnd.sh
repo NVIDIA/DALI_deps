@@ -25,6 +25,6 @@ patch -p1 < ${ROOT_DIR}/patches/0001-ms_adpcm-Fix-and-extend-size-checks.patch
     CXX=${CXX_COMP} \
     ${HOST_ARCH_OPTION} \
     --prefix=${INSTALL_PREFIX}
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+make -j"$(nproc)"
 make install
 popd
