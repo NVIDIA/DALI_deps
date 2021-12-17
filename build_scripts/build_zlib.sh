@@ -18,6 +18,9 @@
 pushd third_party/zlib-ng
 # add DALI prefix to version name to avoid collision system zlib
 sed -i "s/ZLIB/DALI_ZLIB/" zlib.map
+echo -e "\nDALI_ZLIB {\n\
+    *;\n\
+};\n" >> zlib.map
     CFLAGS="-fPIC" \
     CXXFLAGS="-fPIC" \
     CC=${CC_COMP} \
