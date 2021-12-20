@@ -16,16 +16,11 @@
 
 #zlib-ng
 pushd third_party/zlib-ng
-# add DALI prefix to version name to avoid collision system zlib
-sed -i "s/ZLIB/DALI_ZLIB/" zlib.map
-echo -e "\nDALI_ZLIB_0.0.0 {\n\
-    *;\n\
-};\n" >> zlib.map
     CFLAGS="-fPIC" \
     CXXFLAGS="-fPIC" \
     CC=${CC_COMP} \
     CXX=${CXX_COMP} \
-./configure --prefix=${INSTALL_PREFIX} --zlib-compat
+./configure --prefix=${INSTALL_PREFIX} --zlib-compat --static
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
 popd
