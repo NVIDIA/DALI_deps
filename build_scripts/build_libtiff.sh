@@ -24,12 +24,12 @@ patch -p1 < ${ROOT_DIR}/patches/0001-Fix-wget-complaing-about-expired-git.savann
     CC=${CC_COMP} \
     CXX=${CXX_COMP} \
     ${HOST_ARCH_OPTION} \
+    LDFLAGS="-Wl,--exclude-libs,libz.a" \
     --with-zstd-include-dir=${ZSTD_ROOT:-${INSTALL_PREFIX}}/include \
     --with-zstd-lib-dir=${ZSTD_ROOT:-${INSTALL_PREFIX}}/lib         \
     --with-zlib-include-dir=${ZLIB_ROOT:-${INSTALL_PREFIX}}/include \
     --with-zlib-lib-dir=${ZLIB_ROOT:-${INSTALL_PREFIX}}/lib         \
-    --prefix=${INSTALL_PREFIX} \
-    --disable-shared
+    --prefix=${INSTALL_PREFIX}
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
 popd

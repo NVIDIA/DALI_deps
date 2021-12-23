@@ -16,17 +16,10 @@
 
 # zstandard compression library
 pushd third_party/zstd
-cd lib
    CFLAGS="-fPIC" \
    CXXFLAGS="-fPIC" \
    CC=${CC_COMP} \
    CXX=${CXX_COMP} \
    prefix=${INSTALL_PREFIX} \
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)" libzstd.a 2>&1 >/dev/null
-   CFLAGS="-fPIC" \
-   CXXFLAGS="-fPIC" \
-   CC=${CC_COMP} \
-   CXX=${CXX_COMP} \
-   prefix=${INSTALL_PREFIX} \
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)" install-static install-includes 2>&1 >/dev/null
+make -j"$(grep ^processor /proc/cpuinfo | wc -l)" install 2>&1 >/dev/null
 popd
