@@ -86,16 +86,16 @@ The repository consists mostly of externally hosted subrepositories:
 .. _FFmpeg: https://github.com/FFmpeg/FFmpeg
 .. |FFmpeglic| replace:: LGPL v2.1 license
 .. _FFmpeglic: https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md
-.. |FFmpegver| replace:: 4.4.1
-.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n4.4.1
+.. |FFmpegver| replace:: 5.0
+.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n5.0
 .. |FFmpegsrc| replace:: (Source Snapshot)
-.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n4.4.1.tar.gz
+.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n5.0.tar.gz
 
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0
 .. _opencvlic: https://github.com/opencv/opencv/blob/master/LICENSE
-.. |opencvver| replace:: 4.5.4
-.. _opencvver: https://github.com/opencv/opencv/releases/tag/4.5.4
+.. |opencvver| replace:: 4.5.5
+.. _opencvver: https://github.com/opencv/opencv/releases/tag/4.5.5
 
 .. _openjpeg: https://github.com/uclouvain/openjpeg
 .. |openjpeglic| replace:: BSD-2 license
@@ -112,8 +112,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _zstd: https://github.com/facebook/zstd
 .. |zstdlic| replace:: BSD-3 license
 .. _zstdlic: https://github.com/facebook/zstd/blob/dev/LICENSE
-.. |zstdver| replace:: 1.5.0
-.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.5.0
+.. |zstdver| replace:: 1.5.2
+.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.5.2
 
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
@@ -130,8 +130,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 3.19.1
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v3.19.1
+.. |protobufver| replace:: 3.19.3
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v3.19.3
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
@@ -142,8 +142,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _zlib: https://github.com/zlib-ng/zlib-ng
 .. |zliblic| replace:: zlib License
 .. _zliblic: https://github.com/zlib-ng/zlib-ng/blob/develop/README.md
-.. |zlibver| replace:: 2.0.5
-.. _zlibver: https://github.com/zlib-ng/zlib-ng/releases/tag/2.0.5
+.. |zlibver| replace:: 2.0.6
+.. _zlibver: https://github.com/zlib-ng/zlib-ng/releases/tag/2.0.6
 
 .. _libtar: https://github.com/tklauser/libtar.git
 .. |libtarlic| replace:: BSD-3 license
