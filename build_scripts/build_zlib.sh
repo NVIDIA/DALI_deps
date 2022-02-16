@@ -20,7 +20,7 @@ pushd third_party/zlib-ng
     CXXFLAGS="-fPIC" \
     CC=${CC_COMP} \
     CXX=${CXX_COMP} \
-./configure --prefix=${INSTALL_PREFIX} --zlib-compat --static
+./configure --prefix=${INSTALL_PREFIX} --zlib-compat
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
 popd
