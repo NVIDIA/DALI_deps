@@ -139,11 +139,11 @@ The repository consists mostly of externally hosted subrepositories:
 .. |CMakever| replace:: 3.13.5
 .. _CMakever: https://github.com/Kitware/CMake/releases/tag/v3.13.5
 
-.. _zlib: https://github.com/zlib-ng/zlib-ng
+.. _zlib: https://github.com/madler/zlib
 .. |zliblic| replace:: zlib License
-.. _zliblic: https://github.com/zlib-ng/zlib-ng/blob/develop/README.md
-.. |zlibver| replace:: 2.0.6
-.. _zlibver: https://github.com/zlib-ng/zlib-ng/releases/tag/2.0.6
+.. _zliblic: https://github.com/madler/zlib/blob/master/README
+.. |zlibver| replace:: 1.2.11
+.. _zlibver: https://github.com/madler/zlib/releases/tag/v1.2.11
 
 .. _libtar: https://github.com/tklauser/libtar.git
 .. |libtarlic| replace:: BSD-3 license

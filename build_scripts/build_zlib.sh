@@ -14,13 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-#zlib-ng
-pushd third_party/zlib-ng
+#zlib
+pushd third_party/zlib
     CFLAGS="-fPIC" \
     CXXFLAGS="-fPIC" \
     CC=${CC_COMP} \
     CXX=${CXX_COMP} \
-./configure --prefix=${INSTALL_PREFIX} --zlib-compat --static
+./configure --prefix=${INSTALL_PREFIX}
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
 popd
