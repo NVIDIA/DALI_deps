@@ -25,11 +25,10 @@ patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2022-22844.patch
     CC=${CC_COMP} \
     CXX=${CXX_COMP} \
     ${HOST_ARCH_OPTION} \
-    LDFLAGS="-Wl,--exclude-libs,libz.a" \
-    --with-zstd-include-dir=${ZSTD_ROOT:-${INSTALL_PREFIX}}/include \
-    --with-zstd-lib-dir=${ZSTD_ROOT:-${INSTALL_PREFIX}}/lib         \
-    --with-zlib-include-dir=${ZLIB_ROOT:-${INSTALL_PREFIX}}/include \
-    --with-zlib-lib-dir=${ZLIB_ROOT:-${INSTALL_PREFIX}}/lib         \
+    --with-zstd-include-dir=${INSTALL_PREFIX}/include \
+    --with-zstd-lib-dir=${INSTALL_PREFIX}/lib         \
+    --with-zlib-include-dir=${INSTALL_PREFIX}/include \
+    --with-zlib-lib-dir=${INSTALL_PREFIX}/lib         \
     --prefix=${INSTALL_PREFIX}
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
