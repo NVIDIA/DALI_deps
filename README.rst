@@ -74,7 +74,7 @@ The repository consists mostly of externally hosted subrepositories:
 .. _flac: https://github.com/xiph/flac
 .. |flaclic| replace:: BSD-3 license (+ GPL for utils, not used by DALI)
 .. _flaclic: https://github.com/xiph/flac/blob/master/COPYING.Xiph
-.. |flacver| replace:: 1.3.4 (+ Security Patch)
+.. |flacver| replace:: 1.3.4
 .. _flacver: https://github.com/xiph/flac/releases/tag/1.3.4
 
 .. _opus: https://github.com/xiph/opus
