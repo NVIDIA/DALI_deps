@@ -74,8 +74,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _flac: https://github.com/xiph/flac
 .. |flaclic| replace:: BSD-3 license (+ GPL for utils, not used by DALI)
 .. _flaclic: https://github.com/xiph/flac/blob/master/COPYING.Xiph
-.. |flacver| replace:: 1.3.3 (+ Security Patch)
-.. _flacver: https://github.com/xiph/flac/releases/tag/1.3.3
+.. |flacver| replace:: 1.3.4
+.. _flacver: https://github.com/xiph/flac/releases/tag/1.3.4
 
 .. _opus: https://github.com/xiph/opus
 .. |opuslic| replace:: BSD-3 license
@@ -118,8 +118,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
 .. _libjpeg-turbolic: https://github.com/libjpeg-turbo/libjpeg-turbo/blob/master/LICENSE.md
-.. |libjpeg-turbover| replace:: 2.1.2
-.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.1.2
+.. |libjpeg-turbover| replace:: 2.1.3
+.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.1.3
 
 .. _lmdb: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/
 .. |lmdblic| replace::	OpenLDAP Public License
