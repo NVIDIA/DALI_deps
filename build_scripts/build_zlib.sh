@@ -16,6 +16,7 @@
 
 #zlib
 pushd third_party/zlib
+patch -p1 < ${ROOT_DIR}/patches/zlib-CVE-2018-25032.patch
     CFLAGS="-fPIC" \
     CXXFLAGS="-fPIC" \
     CC=${CC_COMP} \
