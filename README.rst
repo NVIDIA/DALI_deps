@@ -142,8 +142,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _zlib: https://github.com/madler/zlib
 .. |zliblic| replace:: zlib License
 .. _zliblic: https://github.com/madler/zlib/blob/master/README
-.. |zlibver| replace:: 1.2.12
-.. _zlibver: https://github.com/madler/zlib/releases/tag/v1.2.12
+.. |zlibver| replace:: 1.2.11 + patches
+.. _zlibver: https://github.com/madler/zlib/releases/tag/v1.2.11
 
 .. _libtar: https://github.com/tklauser/libtar.git
 .. |libtarlic| replace:: BSD-3 license
