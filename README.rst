@@ -52,12 +52,12 @@ The repository consists mostly of externally hosted subrepositories:
 +----------------+---------------------+---------------------+
 
 .. _libsndfile: https://github.com/libsndfile/libsndfile
-.. |libsndfilever| replace:: 1.0.31
-.. _libsndfilever: https://github.com/libsndfile/libsndfile/releases/tag/1.0.31
+.. |libsndfilever| replace:: 1.1.0
+.. _libsndfilever: https://github.com/libsndfile/libsndfile/releases/tag/1.1.0
 .. |libsndfilelic| replace:: LGPL v2.1 license
 .. _libsndfilelic: https://github.com/libsndfile/libsndfile/blob/master/COPYING
 .. |libsndfilesrc| replace:: (Source Snapshot)
-.. _libsndfilesrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/libsndfile-1.0.31.tar.gz
+.. _libsndfilesrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/libsndfile-1.1.0.tar.gz
 
 .. _vorbis: https://github.com/xiph/vorbis
 .. |vorbislic| replace:: BSD-3 license
