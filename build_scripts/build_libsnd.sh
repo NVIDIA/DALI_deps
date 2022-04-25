@@ -16,8 +16,6 @@
 
 # For a snapshot of the code, see the README.rst
 pushd third_party/libsndfile
-patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2021-3246.patch
-patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2021-4156.patch
 ./autogen.sh
 ./configure \
     CFLAGS="-fPIC ${EXTRA_LIBSND_FLAGS}" \
