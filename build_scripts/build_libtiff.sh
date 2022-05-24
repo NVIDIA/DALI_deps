@@ -25,6 +25,7 @@ patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2022-0891.patch
 patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2022-0908.patch
 patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2022-0909.patch
 patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2022-0907.patch
+patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2022-0562.patch
 ./autogen.sh
 ./configure \
     CFLAGS="-fPIC" \
