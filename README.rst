@@ -94,20 +94,20 @@ The repository consists mostly of externally hosted subrepositories:
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0
 .. _opencvlic: https://github.com/opencv/opencv/blob/master/LICENSE
-.. |opencvver| replace:: 4.5.5
-.. _opencvver: https://github.com/opencv/opencv/releases/tag/4.5.5
+.. |opencvver| replace:: 4.6.0
+.. _opencvver: https://github.com/opencv/opencv/releases/tag/4.6.0
 
 .. _openjpeg: https://github.com/uclouvain/openjpeg
 .. |openjpeglic| replace:: BSD-2 license
 .. _openjpeglic: https://github.com/uclouvain/openjpeg/blob/master/LICENSE
-.. |openjpegver| replace:: 2.4.0
-.. _openjpegver: https://github.com/uclouvain/openjpeg/releases/tag/v2.4.0
+.. |openjpegver| replace:: 2.5.0
+.. _openjpegver: https://github.com/uclouvain/openjpeg/releases/tag/v2.5.0
 
 .. _libtiff: https://gitlab.com/libtiff/libtiff
 .. |libtifflic| replace:: BSD-2 license
 .. _libtifflic: https://gitlab.com/libtiff/libtiff/-/blob/master/README.md
-.. |libtiffver| replace:: 4.3.0 (+ Build System Patch)
-.. _libtiffver: https://gitlab.com/libtiff/libtiff/-/tree/v4.3.0
+.. |libtiffver| replace:: 4.4.0 (+ Build System Patch)
+.. _libtiffver: https://gitlab.com/libtiff/libtiff/-/tree/v4.4.0
 
 .. _zstd: https://github.com/facebook/zstd
 .. |zstdlic| replace:: BSD-3 license
@@ -130,8 +130,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 3.20.0
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v3.20.0
+.. |protobufver| replace:: 21.1
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v21.1
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
