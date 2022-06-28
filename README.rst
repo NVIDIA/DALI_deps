@@ -150,3 +150,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libtarlic: https://github.com/tklauser/libtar/blob/master/COPYRIGHT
 .. |libtarver| replace:: 1.2.20 + patches (master)
 .. _libtarver: https://github.com/tklauser/libtar/commit/6379b5d2ae777dad576aeae70566740670057821
+
+Installing dependencies locally
+===============================
+
+In order to conduct `Bare Metal DALI build <https://docs.nvidia.com/deeplearning/dali/main-user-guide/docs/compilation.html#bare-metal-build>`_, you need to install all the above dependencies (or turn off particular features with CMake variables like ``BUILD_NVDEC=OFF`` etc...). ``build_scripts`` folder contains the recipes, how to build every particular dependency. This is automated using ``build_deps.sh``, however we discourage running this script on your local machine (some of these need ``sudo`` to complete - you don't want to run ``sudo``-magic, do you?). Still, the scripts for particular dependencies (``build_*.sh``) outline the way, how the dependencies may be built, to the point that you may copy-paste parts of the recipes. Even if you install the dependencies in a way recommended by their authors, DALI should still work.
