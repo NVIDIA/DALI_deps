@@ -18,6 +18,7 @@
 pushd third_party/libtiff
 patch -p1 < ${ROOT_DIR}/patches/0001-Fix-wget-complaing-about-expired-git.savannah.gnu.or.patch
 patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2022-2057.patch
+patch -p1 < ${ROOT_DIR}/patches/libtiff-BDSA-2022-2116.patch
 ./autogen.sh
 ./configure \
     CFLAGS="-fPIC" \
