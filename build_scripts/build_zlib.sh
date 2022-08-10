@@ -16,6 +16,7 @@
 
 #zlib
 pushd third_party/zlib
+patch -p1 < ${ROOT_DIR}/patches/zlib-CVE-2022-37434.patch
 mkdir -p build
 cd build
 echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
