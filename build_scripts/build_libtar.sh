@@ -16,6 +16,7 @@
 
 # For a snapshot of the code, see the README.rst
 pushd third_party/libtar
+patch -p1 < ${ROOT_DIR}/patches/libtar-CVE-2021-33643.patch
 autoreconf --force --install
 CC=${CC_COMP} \
 CXX=${CXX_COMP} \
