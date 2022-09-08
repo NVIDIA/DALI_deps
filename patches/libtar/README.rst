@@ -4,7 +4,7 @@ License
 =======
 
 Libtar patches libtar-1.2.20-CVE-2021-33643-CVE-2021-33644.patch and libtar-1.2.20-CVE-2021-33645-CVE-2021-33646.patch originate from
-openEuler sources repository. Patch files were modfied to be applicable to the upstream code.
+openEuler_ sources repository. Patch files were modfied to be applicable to the upstream code.
 
 OpenEuler project is licensed under CC BY-SA 4.0.
 
