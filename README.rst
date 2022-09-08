@@ -86,10 +86,10 @@ The repository consists mostly of externally hosted subrepositories:
 .. _FFmpeg: https://github.com/FFmpeg/FFmpeg
 .. |FFmpeglic| replace:: LGPL v2.1 license
 .. _FFmpeglic: https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md
-.. |FFmpegver| replace:: 5.1
-.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n5.1
+.. |FFmpegver| replace:: 5.1.1
+.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n5.1.1
 .. |FFmpegsrc| replace:: (Source Snapshot)
-.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n5.1.tar.gz
+.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n5.1.1.tar.gz
 
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0
@@ -118,8 +118,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
 .. _libjpeg-turbolic: https://github.com/libjpeg-turbo/libjpeg-turbo/blob/master/LICENSE.md
-.. |libjpeg-turbover| replace:: 2.1.3
-.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.1.3
+.. |libjpeg-turbover| replace:: 2.1.4
+.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.1.4
 
 .. _lmdb: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/
 .. |lmdblic| replace::	OpenLDAP Public License
