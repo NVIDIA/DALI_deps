@@ -74,8 +74,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _flac: https://github.com/xiph/flac
 .. |flaclic| replace:: BSD-3 license (+ GPL for utils, not used by DALI)
 .. _flaclic: https://github.com/xiph/flac/blob/master/COPYING.Xiph
-.. |flacver| replace:: 1.3.4
-.. _flacver: https://github.com/xiph/flac/releases/tag/1.3.4
+.. |flacver| replace:: 1.4.1
+.. _flacver: https://github.com/xiph/flac/releases/tag/1.4.1
 
 .. _opus: https://github.com/xiph/opus
 .. |opuslic| replace:: BSD-3 license
@@ -86,10 +86,10 @@ The repository consists mostly of externally hosted subrepositories:
 .. _FFmpeg: https://github.com/FFmpeg/FFmpeg
 .. |FFmpeglic| replace:: LGPL v2.1 license
 .. _FFmpeglic: https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md
-.. |FFmpegver| replace:: 5.1.1
-.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n5.1.1
+.. |FFmpegver| replace:: 5.1.2
+.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n5.1.2
 .. |FFmpegsrc| replace:: (Source Snapshot)
-.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n5.1.1.tar.gz
+.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n5.1.2.tar.gz
 
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0
