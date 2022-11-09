@@ -74,8 +74,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _flac: https://github.com/xiph/flac
 .. |flaclic| replace:: BSD-3 license (+ GPL for utils, not used by DALI)
 .. _flaclic: https://github.com/xiph/flac/blob/master/COPYING.Xiph
-.. |flacver| replace:: 1.4.1 with cross-compilation patch
-.. _flacver: https://github.com/xiph/flac/releases/tag/1.4.1
+.. |flacver| replace:: 1.4.2 with cross-compilation patch
+.. _flacver: https://github.com/xiph/flac/releases/tag/1.4.2
 
 .. _opus: https://github.com/xiph/opus
 .. |opuslic| replace:: BSD-3 license
@@ -130,8 +130,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 21.7
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v21.7
+.. |protobufver| replace:: 21.9
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v21.9
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
@@ -142,8 +142,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _zlib: https://github.com/madler/zlib
 .. |zliblic| replace:: zlib License
 .. _zliblic: https://github.com/madler/zlib/blob/master/README
-.. |zlibver| replace:: 1.2.12
-.. _zlibver: https://github.com/madler/zlib/releases/tag/v1.2.12
+.. |zlibver| replace:: 1.2.13
+.. _zlibver: https://github.com/madler/zlib/releases/tag/v1.2.13
 
 .. _libtar: https://github.com/tklauser/libtar.git
 .. |libtarlic| replace:: BSD-3 license
