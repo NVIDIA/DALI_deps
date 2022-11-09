@@ -24,18 +24,24 @@ patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2022-2953-0002.patch
 patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2022-3597-3626-3627.patch
 patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2022-3599.patch
 patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2022-3570-3598.patch
-./autogen.sh
-./configure \
+
+mkdir -p build
+cd build
+echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
+echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
+echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
     CFLAGS="-fPIC" \
     CXXFLAGS="-fPIC" \
     CC=${CC_COMP} \
     CXX=${CXX_COMP} \
-    ${HOST_ARCH_OPTION} \
-    --with-zstd-include-dir=${INSTALL_PREFIX}/include \
-    --with-zstd-lib-dir=${INSTALL_PREFIX}/lib         \
-    --with-zlib-include-dir=${INSTALL_PREFIX}/include \
-    --with-zlib-lib-dir=${INSTALL_PREFIX}/lib         \
-    --prefix=${INSTALL_PREFIX}
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
+      -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
+      -DCMAKE_PREFIX_PATH=${INSTALL_PREFIX} \
+      ..
+    CFLAGS="-fPIC" \
+    CXXFLAGS="-fPIC" \
+    CC=${CC_COMP} \
+    CXX=${CXX_COMP} \
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
 popd

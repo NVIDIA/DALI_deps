@@ -16,23 +16,35 @@
 
 # protobuf, make two steps for cross compilation if needed
 pushd third_party/protobuf
-./autogen.sh
-./configure CXXFLAGS="-fPIC" --prefix=${HOST_INSTALL_PREFIX} --disable-shared 2>&1 > /dev/null
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)" 2>&1 > /dev/null
-make install 2>&1 > /dev/null
+mkdir -p build
+cd build
+    CFLAGS="-fPIC" \
+    CXXFLAGS="-fPIC" \
+cmake -DCMAKE_BUILD_TYPE=Release -Dprotobuf_BUILD_TESTS=OFF \
+      -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=${HOST_INSTALL_PREFIX} ..
+    CFLAGS="-fPIC" \
+    CXXFLAGS="-fPIC" \
+make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+make install
 # only when cross compiling
 if [ "${CC_COMP}" != "gcc" ]; then
-  make clean
-  ./autogen.sh
-  ./configure \
-      CXXFLAGS="-fPIC ${EXTRA_PROTOBUF_FLAGS}" \
+  rm -rf *
+  echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
+  echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
+  echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
+      CFLAGS="-fPIC" \
+      CXXFLAGS="-fPIC" \
       CC=${CC_COMP} \
       CXX=${CXX_COMP} \
-      ${HOST_ARCH_OPTION} \
-      ${BUILD_ARCH_OPTION} \
-      ${SYSROOT_ARG} \
-      --with-protoc=${HOST_INSTALL_PREFIX}/bin/protoc \
-      --prefix=${INSTALL_PREFIX}
-  make -j$(nproc) install
+  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
+        -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
+        -DWITH_PROTOC=${HOST_INSTALL_PREFIX}/bin/protoc -Dprotobuf_BUILD_TESTS=OFF \
+        -DCMAKE_SYSROOT=${SYSROOT_ARG} ..
+      CFLAGS="-fPIC" \
+      CXXFLAGS="-fPIC" \
+      CC=${CC_COMP} \
+      CXX=${CXX_COMP} \
+  make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+  make install
 fi
 popd

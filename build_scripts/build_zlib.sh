@@ -27,7 +27,8 @@ echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
     CC=${CC_COMP} \
     CXX=${CXX_COMP} \
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
-          -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} ..
+      -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
+      -DCMAKE_PREFIX_PATH=${INSTALL_PREFIX} ..
     CFLAGS="-fPIC" \
     CXXFLAGS="-fPIC" \
     CC=${CC_COMP} \

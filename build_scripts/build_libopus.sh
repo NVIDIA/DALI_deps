@@ -26,15 +26,22 @@ pushd third_party/opus
 OPUS_VERSION=$(grep https://github.com/xiph/opus/releases/tag ${ROOT_DIR}/README.rst  | grep -Eo 'v[0-9]+.[0-9]+.[0-9]+')
 git tag $OPUS_VERSION || true
 
-./autogen.sh
-./configure \
+mkdir -p build
+cd build
+echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
+echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
+echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
     CFLAGS="-fPIC" \
     CXXFLAGS="-fPIC" \
     CC=${CC_COMP} \
     CXX=${CXX_COMP} \
-    ${HOST_ARCH_OPTION} \
-    --prefix=${INSTALL_PREFIX}
-
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
+      -DBUILD_SHARED_LIBS=ON -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
+      -DCMAKE_PREFIX_PATH=${INSTALL_PREFIX} ..
+    CFLAGS="-fPIC" \
+    CXXFLAGS="-fPIC" \
+    CC=${CC_COMP} \
+    CXX=${CXX_COMP} \
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
 popd
