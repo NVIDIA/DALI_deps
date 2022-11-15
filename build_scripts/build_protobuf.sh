@@ -16,23 +16,37 @@
 
 # protobuf, make two steps for cross compilation if needed
 pushd third_party/protobuf
-./autogen.sh
-./configure CXXFLAGS="-fPIC" --prefix=${HOST_INSTALL_PREFIX} --disable-shared 2>&1 > /dev/null
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)" 2>&1 > /dev/null
-make install 2>&1 > /dev/null
+mkdir -p build
+cd build
+    CFLAGS="-fPIC" \
+    CXXFLAGS="-fPIC" \
+cmake -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=${HOST_INSTALL_PREFIX} \
+      -DBUILD_SHARED_LIBS=OFF \
+      -Dprotobuf_BUILD_TESTS=OFF \
+      ..
+make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+make install
 # only when cross compiling
 if [ "${CC_COMP}" != "gcc" ]; then
-  make clean
-  ./autogen.sh
-  ./configure \
-      CXXFLAGS="-fPIC ${EXTRA_PROTOBUF_FLAGS}" \
-      CC=${CC_COMP} \
-      CXX=${CXX_COMP} \
-      ${HOST_ARCH_OPTION} \
-      ${BUILD_ARCH_OPTION} \
-      ${SYSROOT_ARG} \
-      --with-protoc=${HOST_INSTALL_PREFIX}/bin/protoc \
-      --prefix=${INSTALL_PREFIX}
-  make -j$(nproc) install
+  rm -rf *
+  echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
+  echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
+  echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
+  echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> toolchain.cmake
+  echo "set(CMAKE_FIND_ROOT_PATH ${INSTALL_PREFIX})" >> toolchain.cmake
+  echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> toolchain.cmake
+  echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> toolchain.cmake
+  echo "set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)" >> toolchain.cmake
+  echo "set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")" >> toolchain.cmake
+  echo "set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")" >> toolchain.cmake
+  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
+        -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
+        -DBUILD_SHARED_LIBS=OFF \
+        -Dprotobuf_BUILD_TESTS=OFF \
+        -DWITH_PROTOC=${HOST_INSTALL_PREFIX}/bin/protoc \
+        ..
+  make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+  make install
 fi
 popd
