@@ -20,10 +20,11 @@ mkdir -p build
 cd build
     CFLAGS="-fPIC" \
     CXXFLAGS="-fPIC" \
-cmake -DCMAKE_BUILD_TYPE=Release -Dprotobuf_BUILD_TESTS=OFF \
-      -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=${HOST_INSTALL_PREFIX} ..
-    CFLAGS="-fPIC" \
-    CXXFLAGS="-fPIC" \
+cmake -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=${HOST_INSTALL_PREFIX} \
+      -DBUILD_SHARED_LIBS=OFF \
+      -Dprotobuf_BUILD_TESTS=OFF \
+      ..
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
 # only when cross compiling
@@ -32,18 +33,19 @@ if [ "${CC_COMP}" != "gcc" ]; then
   echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
   echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
   echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
-      CFLAGS="-fPIC" \
-      CXXFLAGS="-fPIC" \
-      CC=${CC_COMP} \
-      CXX=${CXX_COMP} \
+  echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> toolchain.cmake
+  echo "set(CMAKE_FIND_ROOT_PATH ${INSTALL_PREFIX})" >> toolchain.cmake
+  echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> toolchain.cmake
+  echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> toolchain.cmake
+  echo "set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)" >> toolchain.cmake
+  echo "set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")" >> toolchain.cmake
+  echo "set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")" >> toolchain.cmake
   cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
-        -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
-        -DWITH_PROTOC=${HOST_INSTALL_PREFIX}/bin/protoc -Dprotobuf_BUILD_TESTS=OFF \
-        -DCMAKE_SYSROOT=${SYSROOT_ARG} ..
-      CFLAGS="-fPIC" \
-      CXXFLAGS="-fPIC" \
-      CC=${CC_COMP} \
-      CXX=${CXX_COMP} \
+        -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
+        -DBUILD_SHARED_LIBS=OFF \
+        -Dprotobuf_BUILD_TESTS=OFF \
+        -DWITH_PROTOC=${HOST_INSTALL_PREFIX}/bin/protoc \
+        ..
   make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
   make install
 fi
