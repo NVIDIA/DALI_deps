@@ -46,3 +46,6 @@
 [submodule "third_party/libtar"]
 	path = third_party/libtar
 	url = https://github.com/tklauser/libtar.git
+[submodule "third_party/cfitsio"]
+	path = third_party/cfitsio
+	url = https://github.com/healpy/cfitsio.git
