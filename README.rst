@@ -154,7 +154,7 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libtarver: https://github.com/tklauser/libtar/commit/6379b5d2ae777dad576aeae70566740670057821
 
 .. _cfitsio: https://github.com/healpy/cfitsio.git
-.. |cfitsiolic| replace:: MIT license
+.. |cfitsiolic| replace:: MIT alike license (NASA)
 .. _cfitsiolic: https://github.com/healpy/cfitsio/blob/master/License.txt
 .. |cfitsiover| replace:: 4.1.0
 .. _cfitsiover: https://github.com/healpy/cfitsio/commit/316e95008492b597b3cbcf84168df22996fe2b6f
