@@ -50,7 +50,7 @@ The repository consists mostly of externally hosted subrepositories:
 +----------------+---------------------+---------------------+
 | libtar_        | |libtarver|_        | |libtarlic|_        |
 +----------------+---------------------+---------------------+
-| cfitsio_        | |cfitsiover|_        | |cfitsiolic|_     |
+| cfitsio_       | |cfitsiover|_       | |cfitsiolic|_       |
 +----------------+---------------------+---------------------+
 
 .. _libsndfile: https://github.com/libsndfile/libsndfile
