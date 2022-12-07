@@ -53,6 +53,7 @@ PACKAGE_LIST=(
     "libopus"
     "libsnd"
     "libtar"
+    "cfitsio"
 )
 
 for PACKAGE in "${PACKAGE_LIST[@]}"; do
