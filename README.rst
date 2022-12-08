@@ -136,8 +136,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
 .. _CMakelic: https://github.com/Kitware/CMake/blob/master/Copyright.txt
-.. |CMakever| replace:: 3.25.1
-.. _CMakever: https://github.com/Kitware/CMake/releases/tag/v3.25.1
+.. |CMakever| replace:: 3.16.3
+.. _CMakever: https://github.com/Kitware/CMake/releases/tag/v3.16.3
 
 .. _zlib: https://github.com/madler/zlib
 .. |zliblic| replace:: zlib License
