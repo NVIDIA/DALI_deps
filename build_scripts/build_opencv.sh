@@ -42,6 +42,7 @@ cmake -DCMAKE_BUILD_TYPE=RELEASE \
       -DBUILD_opencv_cudalegacy=OFF \
       -DBUILD_opencv_stitching=OFF \
       -DWITH_TBB=OFF \
+      -DWITH_QUIRC=OFF \
       -DWITH_OPENMP=OFF \
       -DWITH_PTHREADS_PF=OFF \
       -DBUILD_EXAMPLES=OFF \
@@ -58,8 +59,6 @@ cmake -DCMAKE_BUILD_TYPE=RELEASE \
       -DINSTALL_TESTS=OFF \
       -DVIBRANTE=TRUE \
       -DWITH_CSTRIPES=OFF \
-      -DWITH_ADE=OFF \ 
-      -DWITH_QUIRC=OFF \
       -DCMAKE_PREFIX_PATH=${INSTALL_PREFIX} \
       VERBOSE=1 ..
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)" install
