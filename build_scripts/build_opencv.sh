@@ -42,6 +42,7 @@ cmake -DCMAKE_BUILD_TYPE=RELEASE \
       -DBUILD_opencv_cudalegacy=OFF \
       -DBUILD_opencv_stitching=OFF \
       -DWITH_TBB=OFF \
+      -DWITH_QUIRC=OFF \
       -DWITH_OPENMP=OFF \
       -DWITH_PTHREADS_PF=OFF \
       -DBUILD_EXAMPLES=OFF \
