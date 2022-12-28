@@ -54,12 +54,12 @@ The repository consists mostly of externally hosted subrepositories:
 +----------------+---------------------+---------------------+
 
 .. _libsndfile: https://github.com/libsndfile/libsndfile
-.. |libsndfilever| replace:: 1.1.0
-.. _libsndfilever: https://github.com/libsndfile/libsndfile/releases/tag/1.1.0
+.. |libsndfilever| replace:: 1.2.0
+.. _libsndfilever: https://github.com/libsndfile/libsndfile/releases/tag/1.2.0
 .. |libsndfilelic| replace:: LGPL v2.1 license
 .. _libsndfilelic: https://github.com/libsndfile/libsndfile/blob/master/COPYING
 .. |libsndfilesrc| replace:: (Source Snapshot)
-.. _libsndfilesrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/libsndfile-1.1.0.tar.gz
+.. _libsndfilesrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/libsndfile-1.2.0.tar.gz
 
 .. _vorbis: https://github.com/xiph/vorbis
 .. |vorbislic| replace:: BSD-3 license
@@ -138,8 +138,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
 .. _CMakelic: https://github.com/Kitware/CMake/blob/master/Copyright.txt
-.. |CMakever| replace:: 3.16.3
-.. _CMakever: https://github.com/Kitware/CMake/releases/tag/v3.16.3
+.. |CMakever| replace:: 3.18.6
+.. _CMakever: https://github.com/Kitware/CMake/releases/tag/v3.18.6
 
 .. _zlib: https://github.com/madler/zlib
 .. |zliblic| replace:: zlib License
