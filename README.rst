@@ -96,8 +96,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0
 .. _opencvlic: https://github.com/opencv/opencv/blob/master/LICENSE
-.. |opencvver| replace:: 4.6.0
-.. _opencvver: https://github.com/opencv/opencv/releases/tag/4.6.0
+.. |opencvver| replace:: 4.7.0
+.. _opencvver: https://github.com/opencv/opencv/releases/tag/4.7.0
 
 .. _openjpeg: https://github.com/uclouvain/openjpeg
 .. |openjpeglic| replace:: BSD-2 license
@@ -120,8 +120,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
 .. _libjpeg-turbolic: https://github.com/libjpeg-turbo/libjpeg-turbo/blob/master/LICENSE.md
-.. |libjpeg-turbover| replace:: 2.1.4
-.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.1.4
+.. |libjpeg-turbover| replace:: 2.1.5.1
+.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.1.5.1
 
 .. _lmdb: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/
 .. |lmdblic| replace::	OpenLDAP Public License
@@ -132,8 +132,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 21.10
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v21.10
+.. |protobufver| replace:: 21.12
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v21.12
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
