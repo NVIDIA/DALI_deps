@@ -88,10 +88,10 @@ The repository consists mostly of externally hosted subrepositories:
 .. _FFmpeg: https://github.com/FFmpeg/FFmpeg
 .. |FFmpeglic| replace:: LGPL v2.1 license
 .. _FFmpeglic: https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md
-.. |FFmpegver| replace:: 5.1.2
-.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n5.1.2
+.. |FFmpegver| replace:: 6.0
+.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n6.0
 .. |FFmpegsrc| replace:: (Source Snapshot)
-.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n5.1.2.tar.gz
+.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n6.0.tar.gz
 
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0
@@ -114,8 +114,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _zstd: https://github.com/facebook/zstd
 .. |zstdlic| replace:: BSD-3 license
 .. _zstdlic: https://github.com/facebook/zstd/blob/dev/LICENSE
-.. |zstdver| replace:: 1.5.2
-.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.5.2
+.. |zstdver| replace:: 1.5.4
+.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.5.4
 
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
@@ -132,8 +132,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 21.12
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v21.12
+.. |protobufver| replace:: 22.2
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v22.2
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
