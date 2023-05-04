@@ -82,8 +82,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _opus: https://github.com/xiph/opus
 .. |opuslic| replace:: BSD-3 license
 .. _opuslic: https://github.com/xiph/opus/blob/master/COPYING
-.. |opusver| replace:: 1.3.1
-.. _opusver: https://github.com/xiph/opus/releases/tag/v1.3.1
+.. |opusver| replace:: 1.4
+.. _opusver: https://github.com/xiph/opus/releases/tag/v1.4
 
 .. _FFmpeg: https://github.com/FFmpeg/FFmpeg
 .. |FFmpeglic| replace:: LGPL v2.1 license
@@ -114,8 +114,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _zstd: https://github.com/facebook/zstd
 .. |zstdlic| replace:: BSD-3 license
 .. _zstdlic: https://github.com/facebook/zstd/blob/dev/LICENSE
-.. |zstdver| replace:: 1.5.4
-.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.5.4
+.. |zstdver| replace:: 1.5.5
+.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.5.5
 
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
