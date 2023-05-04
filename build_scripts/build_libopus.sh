@@ -23,7 +23,7 @@ pushd third_party/opus
 # Since we only have a shallow copy of the submodule, without tags, the version can't be determined
 # This is a workaround, parsing the README file to get the tag used, and create a tag in the local repo
 # before calling configure
-OPUS_VERSION=$(grep https://github.com/xiph/opus/releases/tag ${ROOT_DIR}/README.rst  | grep -Eo 'v[0-9]+.[0-9]+.[0-9]+')
+OPUS_VERSION=$(grep https://github.com/xiph/opus/releases/tag ${ROOT_DIR}/README.rst  | grep -Eo 'v[0-9]+.[0-9.]+')
 git tag $OPUS_VERSION || true
 
 mkdir -p build
