@@ -18,8 +18,8 @@
 pushd third_party/protobuf
 mkdir -p build
 cd build
-    CFLAGS="-fPIC" \
-    CXXFLAGS="-fPIC" \
+    CFLAGS="-fPIC -DADDRESS_SANITIZER" \
+    CXXFLAGS="-fPIC -DADDRESS_SANITIZER" \
 cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX=${HOST_INSTALL_PREFIX} \
       -DBUILD_SHARED_LIBS=OFF \
@@ -38,8 +38,8 @@ if [ "${CC_COMP}" != "gcc" ]; then
   echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> toolchain.cmake
   echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> toolchain.cmake
   echo "set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)" >> toolchain.cmake
-  echo "set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")" >> toolchain.cmake
-  echo "set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")" >> toolchain.cmake
+  echo "set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC -DADDRESS_SANITIZER")" >> toolchain.cmake
+  echo "set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -DADDRESS_SANITIZER")" >> toolchain.cmake
   cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
         -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
         -DBUILD_SHARED_LIBS=OFF \
