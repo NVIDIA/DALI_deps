@@ -76,8 +76,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _flac: https://github.com/xiph/flac
 .. |flaclic| replace:: BSD-3 license (+ GPL for utils, not used by DALI)
 .. _flaclic: https://github.com/xiph/flac/blob/master/COPYING.Xiph
-.. |flacver| replace:: 1.4.2 with cross-compilation patch
-.. _flacver: https://github.com/xiph/flac/releases/tag/1.4.2
+.. |flacver| replace:: 1.4.3 with cross-compilation patch
+.. _flacver: https://github.com/xiph/flac/releases/tag/1.4.3
 
 .. _opus: https://github.com/xiph/opus
 .. |opuslic| replace:: BSD-3 license
@@ -108,8 +108,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libtiff: https://gitlab.com/libtiff/libtiff
 .. |libtifflic| replace:: BSD-2 license
 .. _libtifflic: https://gitlab.com/libtiff/libtiff/-/blob/master/README.md
-.. |libtiffver| replace:: 4.5.0 (+ Build System Patch)
-.. _libtiffver: https://gitlab.com/libtiff/libtiff/-/tree/v4.5.0
+.. |libtiffver| replace:: 4.5.1 (+ Build System Patch)
+.. _libtiffver: https://gitlab.com/libtiff/libtiff/-/tree/v4.5.1
 
 .. _zstd: https://github.com/facebook/zstd
 .. |zstdlic| replace:: BSD-3 license
@@ -120,8 +120,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
 .. _libjpeg-turbolic: https://github.com/libjpeg-turbo/libjpeg-turbo/blob/master/LICENSE.md
-.. |libjpeg-turbover| replace:: 2.1.5.1
-.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/2.1.5.1
+.. |libjpeg-turbover| replace:: 3.0.0
+.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/3.0.0
 
 .. _lmdb: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/
 .. |lmdblic| replace::	OpenLDAP Public License
@@ -132,8 +132,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 23.2
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v23.2
+.. |protobufver| replace:: 23.4
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v23.4
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
