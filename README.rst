@@ -126,8 +126,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _lmdb: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/
 .. |lmdblic| replace::	OpenLDAP Public License
 .. _lmdblic: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/LICENSE
-.. |lmdbver| replace:: 0.9.29
-.. _lmdbver: https://github.com/LMDB/lmdb/releases/tag/LMDB_0.9.29
+.. |lmdbver| replace:: 0.9.31
+.. _lmdbver: https://github.com/LMDB/lmdb/releases/tag/LMDB_0.9.31
 
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
