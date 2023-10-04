@@ -96,8 +96,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0
 .. _opencvlic: https://github.com/opencv/opencv/blob/master/LICENSE
-.. |opencvver| replace:: 4.8.0
-.. _opencvver: https://github.com/opencv/opencv/releases/tag/4.8.0
+.. |opencvver| replace:: 4.8.1
+.. _opencvver: https://github.com/opencv/opencv/releases/tag/4.8.1
 
 .. _openjpeg: https://github.com/uclouvain/openjpeg
 .. |openjpeglic| replace:: BSD-2 license
@@ -108,8 +108,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libtiff: https://gitlab.com/libtiff/libtiff
 .. |libtifflic| replace:: BSD-2 license
 .. _libtifflic: https://gitlab.com/libtiff/libtiff/-/blob/master/README.md
-.. |libtiffver| replace:: 4.5.1 (+ Build System Patch)
-.. _libtiffver: https://gitlab.com/libtiff/libtiff/-/tree/v4.5.1
+.. |libtiffver| replace:: 4.6.0 (+ Build System Patch)
+.. _libtiffver: https://gitlab.com/libtiff/libtiff/-/tree/v4.6.0
 
 .. _zstd: https://github.com/facebook/zstd
 .. |zstdlic| replace:: BSD-3 license
