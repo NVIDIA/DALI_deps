@@ -16,7 +16,6 @@
 
 # OpenCV
 pushd third_party/opencv
-patch -p1 < ${ROOT_DIR}/patches/opencv-libwebp-CVE-2023-5129.patch
 mkdir -p build
 cd build
 cmake -DCMAKE_BUILD_TYPE=RELEASE \
