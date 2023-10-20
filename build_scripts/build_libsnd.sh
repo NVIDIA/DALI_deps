@@ -16,6 +16,7 @@
 
 # For a snapshot of the code, see the README.rst
 pushd third_party/libsndfile
+patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2022-33065.patch
 mkdir -p build
 cd build
 echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
