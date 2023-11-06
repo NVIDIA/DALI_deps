@@ -120,8 +120,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
 .. _libjpeg-turbolic: https://github.com/libjpeg-turbo/libjpeg-turbo/blob/master/LICENSE.md
-.. |libjpeg-turbover| replace:: 3.0.0
-.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/3.0.0
+.. |libjpeg-turbover| replace:: 3.0.1
+.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/3.0.1
 
 .. _lmdb: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/
 .. |lmdblic| replace::	OpenLDAP Public License
@@ -132,8 +132,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 24.3
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v24.3
+.. |protobufver| replace:: 25.0
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v25.0
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
