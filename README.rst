@@ -88,10 +88,10 @@ The repository consists mostly of externally hosted subrepositories:
 .. _FFmpeg: https://github.com/FFmpeg/FFmpeg
 .. |FFmpeglic| replace:: LGPL v2.1 license
 .. _FFmpeglic: https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md
-.. |FFmpegver| replace:: 6.0
-.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n6.0
+.. |FFmpegver| replace:: 6.1
+.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n6.1
 .. |FFmpegsrc| replace:: (Source Snapshot)
-.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n6.0.tar.gz
+.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n6.1.tar.gz
 
 .. _opencv: https://github.com/opencv/opencv/
 .. |opencvlic| replace:: Apache License 2.0
