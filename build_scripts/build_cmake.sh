@@ -16,7 +16,7 @@
 
 # CMake
 pushd third_party/CMake
-./bootstrap --parallel=$(grep ^processor /proc/cpuinfo | wc -l) --prefix=${HOST_INSTALL_PREFIX} -- -DCMAKE_USE_OPENSSL=OFF
+./bootstrap --parallel=$(grep ^processor /proc/cpuinfo | wc -l) --prefix=${HOST_INSTALL_PREFIX} -- -DCMAKE_USE_OPENSSL=ON
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
 popd
