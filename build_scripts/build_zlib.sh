@@ -16,7 +16,6 @@
 
 #zlib
 pushd third_party/zlib
-patch -p1 < ${ROOT_DIR}/patches/zlib-CVE-2023-45853.patch
 mkdir -p build
 cd build
 echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
