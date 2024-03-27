@@ -114,8 +114,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _zstd: https://github.com/facebook/zstd
 .. |zstdlic| replace:: BSD-3 license
 .. _zstdlic: https://github.com/facebook/zstd/blob/dev/LICENSE
-.. |zstdver| replace:: 1.5.5
-.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.5.5
+.. |zstdver| replace:: 1.5.6
+.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.5.6
 
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
