@@ -21,5 +21,5 @@ pushd third_party/zstd
    CC=${CC_COMP} \
    CXX=${CXX_COMP} \
    prefix=${INSTALL_PREFIX} \
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)" install
+make -j"$(grep ^processor /proc/cpuinfo | wc -l)" install HAVE_LZMA=0
 popd
