@@ -114,8 +114,8 @@ The repository consists mostly of externally hosted subrepositories:
 .. _zstd: https://github.com/facebook/zstd
 .. |zstdlic| replace:: BSD-3 license
 .. _zstdlic: https://github.com/facebook/zstd/blob/dev/LICENSE
-.. |zstdver| replace:: 1.5.5
-.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.5.5
+.. |zstdver| replace:: 1.5.6
+.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.5.6
 
 .. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
 .. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
@@ -132,14 +132,14 @@ The repository consists mostly of externally hosted subrepositories:
 .. _protobuf: https://github.com/protocolbuffers/protobuf/
 .. |protobuflic| replace:: BSD-3 license
 .. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 25.3
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v25.3
+.. |protobufver| replace:: 26.0
+.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v26.0
 
 .. _CMake: https://github.com/Kitware/CMake/
 .. |CMakelic| replace:: BSD-3 license
 .. _CMakelic: https://github.com/Kitware/CMake/blob/master/Copyright.txt
-.. |CMakever| replace:: 3.18.6
-.. _CMakever: https://github.com/Kitware/CMake/releases/tag/v3.18.6
+.. |CMakever| replace:: 3.20.1
+.. _CMakever: https://github.com/Kitware/CMake/releases/tag/v3.20.1
 
 .. _zlib: https://github.com/madler/zlib
 .. |zliblic| replace:: zlib License
