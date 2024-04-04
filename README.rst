@@ -52,6 +52,8 @@ The repository consists mostly of externally hosted subrepositories:
 +----------------+---------------------+---------------------+
 | cfitsio_       | |cfitsiover|_       | |cfitsiolic|_       |
 +----------------+---------------------+---------------------+
+| aws_sdk_cpp_   | |aws_sdk_cppver|_   | |aws_sdk_cpplic|_   +
++----------------+---------------------+---------------------+
 
 .. _libsndfile: https://github.com/libsndfile/libsndfile
 .. |libsndfilever| replace:: 1.2.2
@@ -158,6 +160,12 @@ The repository consists mostly of externally hosted subrepositories:
 .. _cfitsiolic: https://github.com/healpy/cfitsio/blob/master/License.txt
 .. |cfitsiover| replace:: 4.1.0
 .. _cfitsiover: https://github.com/healpy/cfitsio/commit/316e95008492b597b3cbcf84168df22996fe2b6f
+
+.. _aws_sdk_cpp: https://github.com/aws/aws-sdk-cpp.git
+.. |aws_sdk_cpplic| replace:: Apache 2.0 license
+.. _aws_sdk_cpplic: https://github.com/aws/aws-sdk-cpp/blob/main/LICENSE.txt
+.. |aws_sdk_cppver| replace:: 1.11.300
+.. _aws_sdk_cppver: https://github.com/aws/aws-sdk-cpp/tree/1.11.300
 
 Installing dependencies locally
 ===============================
