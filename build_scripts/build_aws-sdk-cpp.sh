@@ -42,8 +42,6 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DBUILD_ONLY='s3;core;transfer;config;identity-management;sts;sqs;sns;monitoring;logs' \
       -DCMAKE_POLICY_DEFAULT_CMP0075=NEW \
       -DENABLE_TESTING=OFF \
-      -DCURL_HAS_H2=ON \
-      -DCURL_HAS_TLS_PROXY=ON \
       ..
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
