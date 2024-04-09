@@ -54,6 +54,7 @@ PACKAGE_LIST=(
     "libsnd"
     "libtar"
     "cfitsio"
+    "aws-sdk-cpp"
 )
 
 for PACKAGE in "${PACKAGE_LIST[@]}"; do
