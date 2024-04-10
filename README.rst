@@ -13,153 +13,47 @@ To obtain only the required code for DALI build (without unnecessary git history
 
 The repository consists mostly of externally hosted subrepositories:
 
-+----------------+---------------------+---------------------+
-| Repository     | Version             | License             |
-+================+=====================+=====================+
-| libsndfile_    | |libsndfilever|_    | |libsndfilelic|_    |
-|                | |libsndfilesrc|_    |                     |
-+----------------+---------------------+---------------------+
-| vorbis_        | |vorbisver|_        | |vorbislic|_        |
-+----------------+---------------------+---------------------+
-| ogg_           | |oggver|_           | |ogglic|_           |
-+----------------+---------------------+---------------------+
-| flac_          | |flacver|_          | |flaclic|_          |
-+----------------+---------------------+---------------------+
-| opus_          | |opusver|_          | |opuslic|_          |
-+----------------+---------------------+---------------------+
-| FFmpeg_        | |FFmpegver|_        | |FFmpeglic|_        |
-|                | |FFmpegsrc|_        |                     |
-+----------------+---------------------+---------------------+
-| opencv_        | |opencvver|_        | |opencvlic|_        |
-+----------------+---------------------+---------------------+
-| openjpeg_      | |openjpegver|_      | |openjpeglic|_      |
-+----------------+---------------------+---------------------+
-| libtiff_       | |libtiffver|_       | |libtifflic|_       |
-+----------------+---------------------+---------------------+
-| zstd_          | |zstdver|_          | |zstdlic|_          |
-+----------------+---------------------+---------------------+
-| libjpeg-turbo_ | |libjpeg-turbover|_ | |libjpeg-turbolic|_ |
-+----------------+---------------------+---------------------+
-| lmdb_          | |lmdbver|_          | |lmdblic|_          |
-+----------------+---------------------+---------------------+
-| protobuf_      | |protobufver|_      | |protobuflic|_      |
-+----------------+---------------------+---------------------+
-| CMake_         | |CMakever|_         | |CMakelic|_         |
-+----------------+---------------------+---------------------+
-| zlib_          | |zlibver|_          | |zliblic|_          |
-+----------------+---------------------+---------------------+
-| libtar_        | |libtarver|_        | |libtarlic|_        |
-+----------------+---------------------+---------------------+
-| cfitsio_       | |cfitsiover|_       | |cfitsiolic|_       |
-+----------------+---------------------+---------------------+
-| aws_sdk_cpp_   | |aws_sdk_cppver|_   | |aws_sdk_cpplic|_   +
-+----------------+---------------------+---------------------+
-
-.. _libsndfile: https://github.com/libsndfile/libsndfile
-.. |libsndfilever| replace:: 1.2.2
-.. _libsndfilever: https://github.com/libsndfile/libsndfile/releases/tag/1.2.2
-.. |libsndfilelic| replace:: LGPL v2.1 license
-.. _libsndfilelic: https://github.com/libsndfile/libsndfile/blob/master/COPYING
-.. |libsndfilesrc| replace:: (Source Snapshot)
-.. _libsndfilesrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/libsndfile-1.2.2.tar.gz
-
-.. _vorbis: https://github.com/xiph/vorbis
-.. |vorbislic| replace:: BSD-3 license
-.. _vorbislic: https://github.com/xiph/vorbis/blob/master/COPYING
-.. |vorbisver| replace:: 1.3.7
-.. _vorbisver: https://github.com/xiph/vorbis/releases/tag/v1.3.7
-
-.. _ogg: https://github.com/xiph/ogg
-.. |ogglic| replace:: BSD-3 license
-.. _ogglic: https://github.com/xiph/ogg/blob/master/COPYING
-.. |oggver| replace:: 1.3.5
-.. _oggver: https://github.com/xiph/ogg/releases/tag/v1.3.5
-
-.. _flac: https://github.com/xiph/flac
-.. |flaclic| replace:: BSD-3 license (+ GPL for utils, not used by DALI)
-.. _flaclic: https://github.com/xiph/flac/blob/master/COPYING.Xiph
-.. |flacver| replace:: 1.4.3 with cross-compilation patch
-.. _flacver: https://github.com/xiph/flac/releases/tag/1.4.3
-
-.. _opus: https://github.com/xiph/opus
-.. |opuslic| replace:: BSD-3 license
-.. _opuslic: https://github.com/xiph/opus/blob/master/COPYING
-.. |opusver| replace:: 1.4
-.. _opusver: https://github.com/xiph/opus/releases/tag/v1.4
-
-.. _FFmpeg: https://github.com/FFmpeg/FFmpeg
-.. |FFmpeglic| replace:: LGPL v2.1 license
-.. _FFmpeglic: https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md
-.. |FFmpegver| replace:: 6.1.1
-.. _FFmpegver: https://github.com/FFmpeg/FFmpeg/releases/tag/n6.1.1
-.. |FFmpegsrc| replace:: (Source Snapshot)
-.. _FFmpegsrc: https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n6.1.1.tar.gz
-
-.. _opencv: https://github.com/opencv/opencv/
-.. |opencvlic| replace:: Apache License 2.0
-.. _opencvlic: https://github.com/opencv/opencv/blob/master/LICENSE
-.. |opencvver| replace:: 4.9.0
-.. _opencvver: https://github.com/opencv/opencv/releases/tag/4.9.0
-
-.. _openjpeg: https://github.com/uclouvain/openjpeg
-.. |openjpeglic| replace:: BSD-2 license
-.. _openjpeglic: https://github.com/uclouvain/openjpeg/blob/master/LICENSE
-.. |openjpegver| replace:: 2.5.2
-.. _openjpegver: https://github.com/uclouvain/openjpeg/releases/tag/v2.5.2
-
-.. _libtiff: https://gitlab.com/libtiff/libtiff
-.. |libtifflic| replace:: BSD-2 license
-.. _libtifflic: https://gitlab.com/libtiff/libtiff/-/blob/master/README.md
-.. |libtiffver| replace:: 4.6.0 (+ Build System Patch)
-.. _libtiffver: https://gitlab.com/libtiff/libtiff/-/tree/v4.6.0
-
-.. _zstd: https://github.com/facebook/zstd
-.. |zstdlic| replace:: BSD-3 license
-.. _zstdlic: https://github.com/facebook/zstd/blob/dev/LICENSE
-.. |zstdver| replace:: 1.5.6
-.. _zstdver: https://github.com/facebook/zstd/releases/tag/v1.5.6
-
-.. _libjpeg-turbo: https://github.com/libjpeg-turbo/libjpeg-turbo/
-.. |libjpeg-turbolic| replace:: BSD-3 license, IJG license, zlib license
-.. _libjpeg-turbolic: https://github.com/libjpeg-turbo/libjpeg-turbo/blob/master/LICENSE.md
-.. |libjpeg-turbover| replace:: 3.0.2
-.. _libjpeg-turbover: https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/3.0.2
-
-.. _lmdb: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/
-.. |lmdblic| replace::	OpenLDAP Public License
-.. _lmdblic: https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/LICENSE
-.. |lmdbver| replace:: 0.9.31
-.. _lmdbver: https://github.com/LMDB/lmdb/releases/tag/LMDB_0.9.31
-
-.. _protobuf: https://github.com/protocolbuffers/protobuf/
-.. |protobuflic| replace:: BSD-3 license
-.. _protobuflic: https://github.com/protocolbuffers/protobuf/blob/master/LICENSE
-.. |protobufver| replace:: 26.0
-.. _protobufver: https://github.com/protocolbuffers/protobuf/releases/tag/v26.0
-
-.. _CMake: https://github.com/Kitware/CMake/
-.. |CMakelic| replace:: BSD-3 license
-.. _CMakelic: https://github.com/Kitware/CMake/blob/master/Copyright.txt
-.. |CMakever| replace:: 3.20.1
-.. _CMakever: https://github.com/Kitware/CMake/releases/tag/v3.20.1
-
-.. _zlib: https://github.com/madler/zlib
-.. |zliblic| replace:: zlib License
-.. _zliblic: https://github.com/madler/zlib/blob/master/README
-.. |zlibver| replace:: 1.3.1
-.. _zlibver: https://github.com/madler/zlib/releases/tag/v1.3.1
-
-.. _libtar: https://github.com/tklauser/libtar.git
-.. |libtarlic| replace:: BSD-3 license
-.. _libtarlic: https://github.com/tklauser/libtar/blob/master/COPYRIGHT
-.. |libtarver| replace:: 1.2.20 + patches (master)
-.. _libtarver: https://github.com/tklauser/libtar/commit/6379b5d2ae777dad576aeae70566740670057821
-
-.. _cfitsio: https://github.com/healpy/cfitsio.git
-.. |cfitsiolic| replace:: MIT alike license (NASA)
-.. _cfitsiolic: https://github.com/healpy/cfitsio/blob/master/License.txt
-.. |cfitsiover| replace:: 4.1.0
-.. _cfitsiover: https://github.com/healpy/cfitsio/commit/316e95008492b597b3cbcf84168df22996fe2b6f
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Repository                                                                   | Version                                                                                                           | License                                                                                                             |
++==============================================================================+===================================================================================================================+=====================================================================================================================+
+| `libsndfile <https://github.com/libsndfile/libsndfile>`_                     | `1.2.2 <https://github.com/libsndfile/libsndfile/releases/tag/1.2.2>`_                                            | `LGPL v2.1 license <https://github.com/libsndfile/libsndfile/blob/master/COPYING>`_                                 |
+|                                                                              | `(Source Snapshot) <https://developer.download.nvidia.com/compute/redist/nvidia-dali/libsndfile-1.2.2.tar.gz>`_   |                                                                                                                     |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `vorbis <https://github.com/xiph/vorbis>`_                                   | `1.3.7 <https://github.com/xiph/vorbis/releases/tag/v1.3.7>`_                                                     | `BSD-3 license <https://github.com/xiph/vorbis/blob/master/COPYING>`_                                               |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `ogg <https://github.com/xiph/ogg>`_                                         | `1.3.5 <https://github.com/xiph/ogg/releases/tag/v1.3.5>`_                                                        | `BSD-3 license <https://github.com/xiph/ogg/blob/master/COPYING>`_                                                  |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `flac <https://github.com/xiph/flac>`_                                       | `1.4.3 with cross-compilation patch <https://github.com/xiph/flac/releases/tag/1.4.3>`_                           | `BSD-3 license (+ GPL for utils, not used by DALI) <https://github.com/xiph/flac/blob/master/COPYING.Xiph>`_        |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `opus <https://github.com/xiph/opus>`_                                       | `1.4 <https://github.com/xiph/opus/releases/tag/v1.4>`_                                                           | `BSD-3 license <https://github.com/xiph/opus/blob/master/COPYING>`_                                                 |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `FFmpeg <https://github.com/FFmpeg/FFmpeg>`_                                 | `6.1.1 <https://github.com/FFmpeg/FFmpeg/releases/tag/n6.1.1>`_                                                   | `LGPL v2.1 license <https://github.com/FFmpeg/FFmpeg/blob/master/LICENSE.md>`_                                      |
+|                                                                              | `(Source Snapshot) <https://developer.download.nvidia.com/compute/redist/nvidia-dali/FFmpeg-n6.1.1.tar.gz>`_      |                                                                                                                     |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `OpenCV <https://github.com/opencv/opencv/>`_                                | `4.9.0 <https://github.com/opencv/opencv/releases/tag/4.9.0>`_                                                    | `Apache License 2.0 <https://github.com/opencv/opencv/blob/master/LICENSE>`_                                        |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `openjpeg <https://github.com/uclouvain/openjpeg>`_                          | `2.5.2 <https://github.com/uclouvain/openjpeg/releases/tag/v2.5.2>`_                                              | `BSD-2 license <https://github.com/uclouvain/openjpeg/blob/master/LICENSE>`_                                        |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `libtiff <https://gitlab.com/libtiff/libtiff>`_                              | `4.6.0 (+ Build System Patch) <https://gitlab.com/libtiff/libtiff/-/tree/v4.6.0>`_                                | `BSD-2 license <https://gitlab.com/libtiff/libtiff/-/blob/master/README.md>`_                                       |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `zstd <https://github.com/facebook/zstd>`_                                   | `1.5.6 <https://github.com/facebook/zstd/releases/tag/v1.5.6>`_                                                   | `BSD-3 license <https://github.com/facebook/zstd/blob/dev/LICENSE>~_                                                |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `libjpeg-turbo <https://github.com/libjpeg-turbo/libjpeg-turbo/>`_           | `3.0.2 <https://github.com/libjpeg-turbo/libjpeg-turbo/releases/tag/3.0.2>`_                                      | `BSD-3 license, IJG license, zlib license <https://github.com/libjpeg-turbo/libjpeg-turbo/blob/master/LICENSE.md>`_ |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `liblmdb <https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/>`_ | `0.9.31 <https://github.com/LMDB/lmdb/releases/tag/LMDB_0.9.31>`_                                                 | `OpenLDAP Public License <https://github.com/LMDB/lmdb/blob/mdb.master/libraries/liblmdb/LICENSE>`_                 |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `protobuf <https://github.com/protocolbuffers/protobuf/>`_                   | `26.0 <https://github.com/protocolbuffers/protobuf/releases/tag/v26.0>`_                                          | `BSD-3 license <https://github.com/protocolbuffers/protobuf/blob/master/LICENSE>`_                                  |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `CMake <https://github.com/Kitware/CMake/>`_                                 | `3.20.1 <https://github.com/Kitware/CMake/releases/tag/v3.20.1>`_                                                 | `BSD-3 license <https://github.com/Kitware/CMake/blob/master/Copyright.txt>`_                                       |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `zlib <https://github.com/madler/zlib>`_                                     | `1.3.1 <https://github.com/madler/zlib/releases/tag/v1.3.1>`_                                                     | `zlib License <https://github.com/madler/zlib/blob/master/README>`_                                                 |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `libtar <https://github.com/tklauser/libtar.git>`_                           | `1.2.20 + patches (master) <https://github.com/tklauser/libtar/commit/6379b5d2ae777dad576aeae70566740670057821>`_ | `BSD-3 license <https://github.com/tklauser/libtar/blob/master/COPYRIGHT>`_                                         |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `cfitsio <https://github.com/healpy/cfitsio.git>`_                           | `4.1.0 <https://github.com/healpy/cfitsio/commit/316e95008492b597b3cbcf84168df22996fe2b6f>`_                      | `MIT-like license (NASA) <https://github.com/healpy/cfitsio/blob/master/License.txt>`_                              |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| `aws_sdk_cpp <https://github.com/aws/aws-sdk-cpp.git>`_                      | `1.11.300 <https://github.com/aws/aws-sdk-cpp/tree/1.11.300>`_                                                    | `Apache 2.0 license <https://github.com/aws/aws-sdk-cpp/blob/main/LICENSE.txt>`_                                    |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 .. _aws_sdk_cpp: https://github.com/aws/aws-sdk-cpp.git
 .. |aws_sdk_cpplic| replace:: Apache 2.0 license
@@ -170,4 +64,10 @@ The repository consists mostly of externally hosted subrepositories:
 Installing dependencies locally
 ===============================
 
-In order to conduct `Bare Metal DALI build <https://docs.nvidia.com/deeplearning/dali/main-user-guide/docs/compilation.html#bare-metal-build>`_, you need to install all the above dependencies (or turn off particular features with CMake variables like ``BUILD_NVDEC=OFF`` etc...). ``build_scripts`` folder contains the recipes, how to build every particular dependency. This is automated using ``build_deps.sh``, however we discourage running this script on your local machine (some of these need ``sudo`` to complete - you don't want to run ``sudo``-magic, do you?). Still, the scripts for particular dependencies (``build_*.sh``) outline the way, how the dependencies may be built, to the point that you may copy-paste parts of the recipes. Even if you install the dependencies in a way recommended by their authors, DALI should still work.
+In order to conduct `Bare Metal DALI build <https://docs.nvidia.com/deeplearning/dali/main-user-guide/docs/compilation.html#bare-metal-build>`_,
+you need to install all the above dependencies (or turn off particular features with CMake variables like ``BUILD_NVDEC=OFF`` etc...).
+``build_scripts`` folder contains the recipes, how to build every particular dependency. This is automated using ``build_deps.sh``,
+however we discourage running this script on your local machine (some of these need ``sudo`` to complete - you don't want to run
+``sudo``-magic, do you?). Still, the scripts for particular dependencies (``build_*.sh``) outline the way, how the dependencies may be built,
+to the point that you may copy-paste parts of the recipes. Even if you install the dependencies in a way recommended by their authors,
+DALI should still work.
