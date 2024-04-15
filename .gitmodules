@@ -52,3 +52,9 @@
 [submodule "third_party/aws-sdk-cpp"]
 	path = third_party/aws-sdk-cpp
 	url = https://github.com/aws/aws-sdk-cpp
+[submodule "third_party/openssl"]
+	path = third_party/openssl
+	url = https://github.com/openssl/openssl.git
+[submodule "third_party/curl"]
+	path = third_party/curl
+	url = https://github.com/curl/curl.git
