@@ -61,7 +61,7 @@ case "$CMAKE_TARGET_ARCH" in
 esac
 CC=${CC_COMP} CXX=${CXX_COMP}" ${CPPFLAGS} ${CFLAGS}" \
   ${_CONFIGURATOR} ${OPTS[@]} ${LDFLAGS}
-make install libcrypto.a libssl.a
+make install libcrypto.a libssl.a -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 
 popd
 # OpenSSL done
