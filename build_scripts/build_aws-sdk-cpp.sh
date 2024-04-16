@@ -70,9 +70,16 @@ popd
 # Build and install static libcurl library to a temporary dir
 pushd ${ROOT_DIR}/third_party/curl/build
 cmake -DCMAKE_BUILD_TYPE=Release \
+      -DOPENSSL_INCLUDE_DIR="${DEPS_PREFIX}/include" \
+      -DOPENSSL_SSL_LIBRARY="${DEPS_PREFIX}/lib/libssl.a" \
+      -DOPENSSL_CRYPTO_LIBRARY="${DEPS_PREFIX}/lib/libssl.a" \
+      -Dpkgcfg_lib__OPENSSL_ssl="${DEPS_PREFIX}/lib/libssl.a" \
+      -Dpkgcfg_lib__OPENSSL_crypto="${DEPS_PREFIX}/lib/libcrypto.a" \
       -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE} \
       -DCMAKE_INSTALL_PREFIX=${DEPS_PREFIX} \
       -DBUILD_SHARED_LIBS=OFF \
+      -DBUILD_CURL_EXE=OFF \
+      -DBUILD_STATIC_LIBS=ON \
       ..
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
@@ -82,6 +89,8 @@ popd
 # Build AWS SDK libs, link statically with libcurl and OpenSSL
 pushd ${ROOT_DIR}/third_party/aws-sdk-cpp/build
 cmake -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_SYSTEM_INCLUDE_PATH="${DEPS_PREFIX}/include" \
+      -DCMAKE_SYSTEM_PREFIX_PATH="${DEPS_PREFIX}" \
       -DCURL_INCLUDE_DIR="${DEPS_PREFIX}/include" \
       -DCURL_LIBRARY_RELEASE="${DEPS_PREFIX}/lib/libcurl.a" \
       -Dpkgcfg_lib_PC_CURL_curl="${DEPS_PREFIX}/lib/libcurl.a" \
