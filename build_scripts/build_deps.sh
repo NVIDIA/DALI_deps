@@ -37,7 +37,7 @@ echo ${EXTRA_FLAC_FLAGS}
 echo ${EXTRA_LIBSND_FLAGS}
 
 PACKAGE_LIST=(
-    "cmake"
+#    "cmake"
     "zlib"
     "protobuf"
     "lmdb"
