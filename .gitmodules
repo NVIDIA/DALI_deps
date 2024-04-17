@@ -1,57 +1,57 @@
 [submodule "third_party/libsndfile"]
-        path = third_party/libsndfile
-        url = https://github.com/libsndfile/libsndfile
+	path = third_party/libsndfile
+	url = https://github.com/libsndfile/libsndfile
 [submodule "third_party/vorbis"]
-        path = third_party/vorbis
-        url = https://github.com/xiph/vorbis
+	path = third_party/vorbis
+	url = https://github.com/xiph/vorbis
 [submodule "third_party/ogg"]
-        path = third_party/ogg
-        url = https://github.com/xiph/ogg
+	path = third_party/ogg
+	url = https://github.com/xiph/ogg
 [submodule "third_party/flac"]
-        path = third_party/flac
-        url = https://github.com/xiph/flac
+	path = third_party/flac
+	url = https://github.com/xiph/flac
 [submodule "third_party/FFmpeg"]
-        path = third_party/FFmpeg
-        url = https://github.com/FFmpeg/FFmpeg
+	path = third_party/FFmpeg
+	url = https://github.com/FFmpeg/FFmpeg
 [submodule "third_party/opencv"]
-        path = third_party/opencv
-        url = https://github.com/opencv/opencv
+	path = third_party/opencv
+	url = https://github.com/opencv/opencv
 [submodule "third_party/openjpeg"]
-        path = third_party/openjpeg
-        url = https://github.com/uclouvain/openjpeg
+	path = third_party/openjpeg
+	url = https://github.com/uclouvain/openjpeg
 [submodule "third_party/libtiff"]
-        path = third_party/libtiff
-        url = https://gitlab.com/libtiff/libtiff
+	path = third_party/libtiff
+	url = https://gitlab.com/libtiff/libtiff
 [submodule "third_party/zstd"]
-        path = third_party/zstd
-        url = https://github.com/facebook/zstd
+	path = third_party/zstd
+	url = https://github.com/facebook/zstd
 [submodule "third_party/libjpeg-turbo"]
-        path = third_party/libjpeg-turbo
-        url = https://github.com/libjpeg-turbo/libjpeg-turbo
+	path = third_party/libjpeg-turbo
+	url = https://github.com/libjpeg-turbo/libjpeg-turbo
 [submodule "third_party/lmdb"]
-        path = third_party/lmdb
-        url = https://github.com/LMDB/lmdb
+	path = third_party/lmdb
+	url = https://github.com/LMDB/lmdb
 [submodule "third_party/protobuf"]
-        path = third_party/protobuf
-        url = https://github.com/google/protobuf
+	path = third_party/protobuf
+	url = https://github.com/google/protobuf
 [submodule "third_party/zlib"]
-        path = third_party/zlib
-        url = https://github.com/madler/zlib
+	path = third_party/zlib
+	url = https://github.com/madler/zlib
 [submodule "third_party/opus"]
-        path = third_party/opus
-        url = https://github.com/xiph/opus
+	path = third_party/opus
+	url = https://github.com/xiph/opus
 [submodule "third_party/libtar"]
-        path = third_party/libtar
-        url = https://github.com/tklauser/libtar.git
+	path = third_party/libtar
+	url = https://github.com/tklauser/libtar.git
 [submodule "third_party/cfitsio"]
-        path = third_party/cfitsio
-        url = https://github.com/healpy/cfitsio.git
+	path = third_party/cfitsio
+	url = https://github.com/healpy/cfitsio.git
 [submodule "third_party/aws-sdk-cpp"]
-        path = third_party/aws-sdk-cpp
-        url = https://github.com/aws/aws-sdk-cpp
+	path = third_party/aws-sdk-cpp
+	url = https://github.com/aws/aws-sdk-cpp
 [submodule "third_party/openssl"]
-        path = third_party/openssl
-        url = https://github.com/openssl/openssl.git
+	path = third_party/openssl
+	url = https://github.com/openssl/openssl.git
 [submodule "third_party/curl"]
-        path = third_party/curl
-        url = https://github.com/curl/curl.git
+	path = third_party/curl
+	url = https://github.com/curl/curl.git
