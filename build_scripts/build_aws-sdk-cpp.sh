@@ -72,7 +72,7 @@ pushd ${ROOT_DIR}/third_party/curl/build
 cmake -DCMAKE_BUILD_TYPE=Release \
       -DOPENSSL_INCLUDE_DIR="${DEPS_PREFIX}/include" \
       -DOPENSSL_SSL_LIBRARY="${DEPS_PREFIX}/lib/libssl.a" \
-      -DOPENSSL_CRYPTO_LIBRARY="${DEPS_PREFIX}/lib/libssl.a" \
+      -DOPENSSL_CRYPTO_LIBRARY="${DEPS_PREFIX}/lib/libcrypto.a" \
       -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_FILE} \
       -DCMAKE_INSTALL_PREFIX=${DEPS_PREFIX} \
       -DBUILD_SHARED_LIBS=OFF \
