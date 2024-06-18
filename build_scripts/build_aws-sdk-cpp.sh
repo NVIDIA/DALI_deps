@@ -62,7 +62,7 @@ esac
 CC=${CC_COMP} CXX=${CXX_COMP}" ${CPPFLAGS} ${CFLAGS}" \
   ${_CONFIGURATOR} ${OPTS[@]} ${LDFLAGS}
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
-make install
+make install_sw install_ssldirs
 
 popd
 # OpenSSL done
@@ -89,6 +89,7 @@ popd
 # Build AWS SDK libs, link statically with libcurl and OpenSSL
 pushd ${ROOT_DIR}/third_party/aws-sdk-cpp/build
 cmake -DCMAKE_BUILD_TYPE=Release \
+      -DLEGACY_MODE=OFF \
       -DCMAKE_SYSTEM_INCLUDE_PATH="${DEPS_PREFIX}/include" \
       -DCMAKE_SYSTEM_PREFIX_PATH="${DEPS_PREFIX}" \
       -DCURL_INCLUDE_DIR="${DEPS_PREFIX}/include" \
