@@ -20,6 +20,7 @@ patch -p1 < ${ROOT_DIR}/patches/0001-Fix-wget-complaing-about-expired-git.savann
 patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2023-6228.patch
 patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2023-6277.patch
 patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2023-52356.patch
+patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2024-7006.patch
 
 mkdir -p build
 cd build
