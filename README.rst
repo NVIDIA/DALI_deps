@@ -71,5 +71,6 @@ running this script as sudo. Instead, you can specify a prefix path:
 export HOST_INSTALL_PREFIX=$HOME/prefix/
 export PATH=$HOME/prefix/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/prefix/lib:$LD_LIBRARY_PATH
+export CPATH=$HOME/prefix/include:$CPATH
 bash -ex build_scripts/build_deps.sh
 ```

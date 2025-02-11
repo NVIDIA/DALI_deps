@@ -23,6 +23,7 @@ export CXX_COMP=${CXX_COMP:-g++}
 export WITH_FFMPEG=${WITH_FFMPEG:-1}
 export OPENCV_TOOLCHAIN_FILE=${OPENCV_TOOLCHAIN_FILE:-"linux/gnu.toolchain.cmake"}
 export CMAKE_TARGET_ARCH=${CMAKE_TARGET_ARCH:-$(uname -m)}
+export CLEANUP=${CLEANUP:-0}
 echo ${INSTALL_PREFIX}
 echo ${CC_COMP}
 echo ${CXX_COMP}
@@ -35,6 +36,15 @@ echo ${EXTRA_PROTOBUF_FLAGS}
 echo ${OPENCV_TOOLCHAIN_FILE}
 echo ${EXTRA_FLAC_FLAGS}
 echo ${EXTRA_LIBSND_FLAGS}
+echo ${CLEANUP}
+
+if [ "$CLEANUP" -eq 1 ]; then
+    git clean -fdx
+    git submodule init
+    git submodule update --init --recursive
+    git submodule foreach 'git clean -fdx'
+    git submodule foreach 'git checkout --force'
+fi
 
 PACKAGE_LIST=(
     "zlib"
