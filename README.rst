@@ -62,8 +62,14 @@ Installing dependencies locally
 
 In order to conduct `Bare Metal DALI build <https://docs.nvidia.com/deeplearning/dali/main-user-guide/docs/compilation.html#bare-metal-build>`_,
 you need to install all the above dependencies (or turn off particular features with CMake variables like ``BUILD_NVDEC=OFF`` etc...).
-``build_scripts`` folder contains the recipes, how to build every particular dependency. This is automated using ``build_deps.sh``,
-however we discourage running this script on your local machine (some of these need ``sudo`` to complete - you don't want to run
-``sudo``-magic, do you?). Still, the scripts for particular dependencies (``build_*.sh``) outline the way, how the dependencies may be built,
-to the point that you may copy-paste parts of the recipes. Even if you install the dependencies in a way recommended by their authors,
-DALI should still work.
+``build_scripts`` folder contains the recipes, how to build every particular dependency.
+
+
+This is automated using ``build_deps.sh``, which will build all the dependencies and install them to the local environment. We recommend not
+running this script as sudo. Instead, you can specify a prefix path:
+```
+export HOST_INSTALL_PREFIX=$HOME/prefix/
+export PATH=$HOME/prefix/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/prefix/lib:$LD_LIBRARY_PATH
+bash -ex build_scripts/build_deps.sh
+```
