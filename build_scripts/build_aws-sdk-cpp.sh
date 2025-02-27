@@ -80,6 +80,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DBUILD_SHARED_LIBS=OFF \
       -DBUILD_CURL_EXE=OFF \
       -DBUILD_STATIC_LIBS=ON \
+      -DCURL_USE_LIBPSL=OFF \
       ..
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
