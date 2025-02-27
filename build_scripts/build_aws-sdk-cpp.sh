@@ -42,7 +42,6 @@ echo "set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")" >> ${TOOLCHAIN_FILE}
 
 # Build and install static OpenSSL libs to a temporary dir
 pushd ${ROOT_DIR}/third_party/openssl
-patch -p1 < ${ROOT_DIR}/patches/openssl-CVE-2024-13176.patch
 CFLAGS="$CFLAGS -fPIC -Wa,--noexecstack"
 declare -a OPTS
 OPTS+=(no-shared)
