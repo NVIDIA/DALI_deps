@@ -45,7 +45,7 @@
 	url = https://github.com/tklauser/libtar.git
 [submodule "third_party/cfitsio"]
 	path = third_party/cfitsio
-	url = https://github.com/healpy/cfitsio.git
+	url = https://github.com/HEASARC/cfitsio.git
 [submodule "third_party/aws-sdk-cpp"]
 	path = third_party/aws-sdk-cpp
 	url = https://github.com/aws/aws-sdk-cpp
