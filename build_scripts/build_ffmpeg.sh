@@ -17,6 +17,8 @@
 # For a snapshot of the code, see the README.rst
 if [ ${WITH_FFMPEG} -gt 0 ]; then
     pushd third_party/FFmpeg
+    patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2025-22921.patch
+
     ./configure \
         --prefix=${INSTALL_PREFIX} \
         --disable-static \
