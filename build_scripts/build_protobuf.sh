@@ -16,6 +16,7 @@
 
 # protobuf, make two steps for cross compilation if needed
 pushd third_party/protobuf
+patch -p1 < ${ROOT_DIR}/patches/0001-Update-absl-to-work-with-older-compilers.patch
 mkdir -p build
 cd build
     CFLAGS="-fPIC" \
@@ -41,10 +42,12 @@ if [ "${CC_COMP}" != "gcc" ]; then
   # use ' to avoid bash substitution for CMAKE_C* variables
   echo 'set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")' >> toolchain.cmake
   echo 'set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -std=c++17")' >> toolchain.cmake
+  # Dprotobuf_FORCE_FETCH_DEPENDENCIES to ensure we don't use host dependencies
   cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
         -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
         -DBUILD_SHARED_LIBS=OFF \
         -Dprotobuf_BUILD_TESTS=OFF \
+        -Dprotobuf_FORCE_FETCH_DEPENDENCIES=ON \
         -DWITH_PROTOC=${HOST_INSTALL_PREFIX}/bin/protoc \
         ..
   make -j"$(grep ^processor /proc/cpuinfo | wc -l)"

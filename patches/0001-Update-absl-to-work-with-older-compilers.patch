@@ -1,0 +1,26 @@
+From 5f7e63cdb9a249694e70b52be0bcde2bdfa451d9 Mon Sep 17 00:00:00 2001
+From: Janusz Lisiecki <jlisiecki@nvidia.com>
+Date: Fri, 30 May 2025 18:58:29 +0200
+Subject: [PATCH] Update absl to work with older compilers
+
+Signed-off-by: Janusz Lisiecki <jlisiecki@nvidia.com>
+---
+ cmake/dependencies.cmake | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/cmake/dependencies.cmake b/cmake/dependencies.cmake
+index 5caa2e67a..13541c1de 100644
+--- a/cmake/dependencies.cmake
++++ b/cmake/dependencies.cmake
+@@ -12,7 +12,7 @@ endif()
+ 
+ set(rules_apple-version "3.16.0")
+ set(apple_support-version "1.15.1")
+-set(abseil-cpp-version "20250127.0")
++set(abseil-cpp-version "20250127.1")
+ set(rules_cc-version "0.0.17")
+ set(zlib-version "1.3.1.bcr.5")
+ set(bazel_features-version "1.23.0")
+-- 
+2.34.1
+
