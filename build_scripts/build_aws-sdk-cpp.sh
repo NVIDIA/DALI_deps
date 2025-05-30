@@ -26,17 +26,18 @@ export DEPS_PREFIX=${ROOT_DIR}/third_party/aws-sdk-cpp/deps
 export DEPS_OPENSSLDIR=${ROOT_DIR}/third_party/aws-sdk-cpp/openssldir
 export TOOLCHAIN_FILE=${ROOT_DIR}/third_party/aws-sdk-cpp/toolchain.cmake
 
-echo 'set(CMAKE_SYSTEM_NAME Linux)' > ${TOOLCHAIN_FILE}
+echo "set(CMAKE_SYSTEM_NAME Linux)" > ${TOOLCHAIN_FILE}
 echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> ${TOOLCHAIN_FILE}
 echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> ${TOOLCHAIN_FILE}
 echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> ${TOOLCHAIN_FILE}
 # only when cross compiling
 if [ "${CC_COMP}" != "gcc" ]; then
     echo "set(CMAKE_FIND_ROOT_PATH ${INSTALL_PREFIX})" >> ${TOOLCHAIN_FILE}
-    echo 'set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)' >> ${TOOLCHAIN_FILE}
-    echo 'set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)' >> ${TOOLCHAIN_FILE}
-    echo 'set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)' >> ${TOOLCHAIN_FILE}
+    echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> ${TOOLCHAIN_FILE}
+    echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> ${TOOLCHAIN_FILE}
+    echo "set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)" >> ${TOOLCHAIN_FILE}
 fi
+# use ' to avoid bash substitution for CMAKE_C* variables
 echo 'set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")' >> ${TOOLCHAIN_FILE}
 echo 'set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")' >> ${TOOLCHAIN_FILE}
 
