@@ -37,8 +37,9 @@ if [ "${CC_COMP}" != "gcc" ]; then
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> ${TOOLCHAIN_FILE}
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)" >> ${TOOLCHAIN_FILE}
 fi
-echo "set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")" >> ${TOOLCHAIN_FILE}
-echo "set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")" >> ${TOOLCHAIN_FILE}
+# use ' to avoid bash substitution for CMAKE_C* variables
+echo 'set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")' >> ${TOOLCHAIN_FILE}
+echo 'set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")' >> ${TOOLCHAIN_FILE}
 
 # Build and install static OpenSSL libs to a temporary dir
 pushd ${ROOT_DIR}/third_party/openssl

@@ -31,8 +31,9 @@ if [ "${CC_COMP}" != "gcc" ]; then
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> toolchain.cmake
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)" >> toolchain.cmake
 fi
-echo "set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")" >> toolchain.cmake
-echo "set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")" >> toolchain.cmake
+# use ' to avoid bash substitution for CMAKE_C* variables
+echo 'set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")' >> toolchain.cmake
+echo 'set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")' >> toolchain.cmake
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
       -DBUILD_TESTING=OFF -DBUILD_REGTEST=OFF -DBUILD_PROGRAMS=OFF -DBUILD_EXAMPLES=OFF \
       -DBUILD_SHARED_LIBS=ON \
