@@ -19,12 +19,14 @@ pushd third_party/protobuf
 patch -p1 < ${ROOT_DIR}/patches/0001-Update-absl-to-work-with-older-compilers.patch
 mkdir -p build
 cd build
+# Dprotobuf_FORCE_FETCH_DEPENDENCIES to ensure we don't use host dependencies
     CFLAGS="-fPIC" \
     CXXFLAGS="-fPIC -std=c++17" \
 cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX=${HOST_INSTALL_PREFIX} \
       -DBUILD_SHARED_LIBS=OFF \
       -Dprotobuf_BUILD_TESTS=OFF \
+      -Dprotobuf_FORCE_FETCH_DEPENDENCIES=ON \
       ..
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install
