@@ -19,6 +19,8 @@ pushd third_party/libtiff
 patch -p1 < ${ROOT_DIR}/patches/0001-Fix-wget-complaing-about-expired-git.savannah.gnu.or.patch
 patch -p1 < ${ROOT_DIR}/patches/libtiff/CVE-2025-8176.patch
 patch -p1 < ${ROOT_DIR}/patches/libtiff/CVE-2025-8177.patch
+patch -p1 < ${ROOT_DIR}/patches/libtiff/CVE-2024-13978.patch
+patch -p1 < ${ROOT_DIR}/patches/libtiff/CVE-2025-8534.patch
 
 mkdir -p build
 cd build
