@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-# Copyright (c) 2021, NVIDIA CORPORATION. All rights reserved.
+# Copyright (c) 2021-2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 
 # protobuf, make two steps for cross compilation if needed
 pushd third_party/protobuf
-patch -p1 < ${ROOT_DIR}/patches/0001-Update-absl-to-work-with-older-compilers.patch
 mkdir -p build
 cd build
 # Dprotobuf_FORCE_FETCH_DEPENDENCIES to ensure we don't use host dependencies
