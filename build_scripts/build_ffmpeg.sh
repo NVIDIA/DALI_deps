@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-# Copyright (c) 2021, NVIDIA CORPORATION. All rights reserved.
+# Copyright (c) 2021-2025, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@
 # For a snapshot of the code, see the README.rst
 if [ ${WITH_FFMPEG} -gt 0 ]; then
     pushd third_party/FFmpeg
-    patch -p1 < ${ROOT_DIR}/patches/FFmpeg-CVE-2025-22921.patch
 
     ./configure \
         --prefix=${INSTALL_PREFIX} \
@@ -26,7 +25,6 @@ if [ ${WITH_FFMPEG} -gt 0 ]; then
         --disable-doc \
         --disable-avdevice \
         --disable-swresample \
-        --disable-postproc \
         --disable-w32threads \
         --disable-os2threads \
         --disable-dwt \
