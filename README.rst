@@ -66,11 +66,10 @@ you need to install all the above dependencies (or turn off particular features 
 
 
 This is automated using ``build_deps.sh``, which will build all the dependencies and install them to the local environment. We recommend not
-running this script as sudo. Instead, you can specify a prefix path:
-```
-export HOST_INSTALL_PREFIX=$HOME/prefix/
-export PATH=$HOME/prefix/bin:$PATH
-export LD_LIBRARY_PATH=$HOME/prefix/lib:$LD_LIBRARY_PATH
-export CPATH=$HOME/prefix/include:$CPATH
-bash -ex build_scripts/build_deps.sh
-```
+running this script as sudo. Instead, you can specify a prefix path::
+
+    export HOST_INSTALL_PREFIX=$HOME/prefix/
+    export PATH=$HOME/prefix/bin:$PATH
+    export LD_LIBRARY_PATH=$HOME/prefix/lib:$LD_LIBRARY_PATH
+    export CPATH=$HOME/prefix/include:$CPATH
+    bash -ex build_scripts/build_deps.sh
