@@ -18,6 +18,8 @@
 pushd third_party/libsndfile
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2022-33065.patch
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2024-50612.patch
+patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2025-56226-01-mpeg-l3-encode.patch
+patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2025-56226-02-sndfile.patch
 mkdir -p build
 cd build
 echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
