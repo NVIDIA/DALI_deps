@@ -91,6 +91,7 @@ popd
 pushd ${ROOT_DIR}/third_party/aws-sdk-cpp/build
 cmake -DCMAKE_BUILD_TYPE=Release \
       -DLEGACY_MODE=OFF \
+      -DCMAKE_DISABLE_FIND_PACKAGE_s2n=ON \
       -DCMAKE_SYSTEM_INCLUDE_PATH="${DEPS_PREFIX}/include" \
       -DCMAKE_SYSTEM_PREFIX_PATH="${DEPS_PREFIX}" \
       -DCURL_INCLUDE_DIR="${DEPS_PREFIX}/include" \
