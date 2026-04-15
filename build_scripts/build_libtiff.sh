@@ -16,6 +16,7 @@
 
 # libtiff
 pushd third_party/libtiff
+patch -p1 < ${ROOT_DIR}/patches/libtiff-CVE-2026-4775.patch
 
 mkdir -p build
 cd build
