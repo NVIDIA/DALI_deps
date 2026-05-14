@@ -18,9 +18,19 @@
 pushd third_party/opencv
 mkdir -p build
 cd build
+# Validate no path traversal
+if [[ "$OPENCV_TOOLCHAIN_FILE" == *..* ]]; then
+  echo "ERROR: OPENCV_TOOLCHAIN_FILE must not contain '..'" >&2
+  exit 1
+fi
+TOOLCHAIN_PATH="$PWD/../platforms/${OPENCV_TOOLCHAIN_FILE}"
+if [[ ! -f "$TOOLCHAIN_PATH" ]]; then
+  echo "ERROR: Toolchain file not found: $TOOLCHAIN_PATH" >&2
+  exit 1
+fi
 cmake -DCMAKE_BUILD_TYPE=RELEASE \
       -DVIBRANTE_PDK:STRING=/ \
-      -DCMAKE_TOOLCHAIN_FILE=$PWD/../platforms/${OPENCV_TOOLCHAIN_FILE} \
+      -DCMAKE_TOOLCHAIN_FILE=${TOOLCHAIN_PATH} \
       -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
       -DBUILD_LIST=core,improc,imgcodecs \
       -DBUILD_SHARED_LIBS=OFF \

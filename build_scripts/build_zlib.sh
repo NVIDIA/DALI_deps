@@ -18,6 +18,23 @@
 pushd third_party/zlib
 mkdir -p build
 cd build
+
+# Validate before use
+if [[ ! "$CC_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
+  echo "ERROR: CC_COMP contains invalid characters" >&2
+  exit 1
+fi
+# Validate before use
+if [[ ! "$CXX_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
+  echo "ERROR: CXX_COMP contains invalid characters" >&2
+  exit 1
+fi
+# Validate before use
+if [[ ! "$CMAKE_TARGET_ARCH" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
+  echo "ERROR: CMAKE_TARGET_ARCH contains invalid characters" >&2
+  exit 1
+fi
+
 echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
 echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
 echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
