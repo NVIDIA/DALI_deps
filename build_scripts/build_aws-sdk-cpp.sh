@@ -15,6 +15,21 @@
 # limitations under the License.
 
 export ROOT_DIR=$(pwd)
+# Validate before use
+if [[ ! "$CC_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
+  echo "ERROR: CC_COMP contains invalid characters" >&2
+  exit 1
+fi
+# Validate before use
+if [[ ! "$CXX_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
+  echo "ERROR: CXX_COMP contains invalid characters" >&2
+  exit 1
+fi
+# Validate before use
+if [[ ! "$CMAKE_TARGET_ARCH" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
+  echo "ERROR: CMAKE_TARGET_ARCH contains invalid characters" >&2
+  exit 1
+fi
 
 mkdir -p ${ROOT_DIR}/third_party/openssl/build
 mkdir -p ${ROOT_DIR}/third_party/curl/build
