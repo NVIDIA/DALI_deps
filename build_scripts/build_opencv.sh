@@ -15,6 +15,11 @@
 # limitations under the License.
 
 # OpenCV
+# Note: OpenCV's `imgcodecs` module (and its bundled JPEG/TIFF/OpenJPEG/PNG/WebP
+# image-format libraries) is only needed by DALI's test suite — production DALI
+# dropped the legacy image decoder. That is also why libjpeg-turbo, libtiff, and
+# openjpeg are no longer kept as standalone submodules in this repo: OpenCV's
+# in-tree copies are sufficient for the tests.
 pushd third_party/opencv
 mkdir -p build
 cd build
@@ -39,18 +44,17 @@ cmake -DCMAKE_BUILD_TYPE=RELEASE \
       -DWITH_IPP=OFF \
       -DWITH_OPENCL=OFF \
       -DWITH_GTK=OFF \
-      -DBUILD_JPEG=OFF \
-      -DWITH_JPEG=ON \
-      -DBUILD_TIFF=OFF \
-      -DWITH_TIFF=ON \
+      -DBUILD_JPEG=ON \
+      -DBUILD_TIFF=ON \
+      -DBUILD_OPENJPEG=ON \
+      -DBUILD_PNG=ON \
+      -DBUILD_WEBP=ON \
       -DWITH_QUIRC=OFF \
       -DWITH_ADE=OFF \
       -DBUILD_JASPER=OFF \
       -DBUILD_DOCS=OFF \
       -DBUILD_TESTS=OFF \
       -DBUILD_PERF_TESTS=OFF \
-      -DBUILD_PNG=ON \
-      -DWITH_WEBP=ON \
       -DBUILD_opencv_cudalegacy=OFF \
       -DBUILD_opencv_stitching=OFF \
       -DWITH_TBB=OFF \
