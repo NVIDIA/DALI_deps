@@ -17,6 +17,7 @@
 # For a snapshot of the code, see the README.rst
 pushd third_party/libsndfile
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2022-33065.patch
+patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2022-33065-extra-overflow-fixes.patch
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2024-50612.patch
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2025-56226-01-mpeg-l3-encode.patch
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2025-56226-02-sndfile.patch
