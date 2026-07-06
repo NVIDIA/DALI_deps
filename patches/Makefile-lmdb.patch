@@ -1,5 +1,5 @@
 diff --git a/libraries/liblmdb/Makefile b/libraries/liblmdb/Makefile
-index 9fd819b..a4a0a20 100644
+index f254511..808eba7 100644
 --- a/libraries/liblmdb/Makefile
 +++ b/libraries/liblmdb/Makefile
 @@ -18,8 +18,8 @@
@@ -13,47 +13,55 @@ index 9fd819b..a4a0a20 100644
  W	= -W -Wall -Wno-unused-parameter -Wbad-function-cast -Wuninitialized
  THREADS = -pthread
  OPT = -O2 -g
-@@ -36,7 +36,7 @@ VEREXT	= $(LIBVER).$(ABIVER)
- LMDB_VERSION	= 1.0.0
- SOFULL	= $(SOEXT).$(VEREXT)
- 
+@@ -27,7 +27,7 @@ CFLAGS	= $(THREADS) $(OPT) $(W) $(XCFLAGS)
+ LDLIBS	=
+ SOLIBS	=
+ SOEXT	= .so
 -prefix	= /usr/local
 +prefix	?= /usr/local
  exec_prefix = $(prefix)
  bindir = $(exec_prefix)/bin
  libdir = $(exec_prefix)/lib
-@@ -58,22 +58,15 @@ VERSION_OPT	= -Wl,-soname,$(SOVER)
- # For MacOSX:
- #VERSION_OPT	= -Wl,-current_version,$(VEREXT)
+@@ -38,21 +38,19 @@ mandir = $(datarootdir)/man
+ ########################################################################
  
--all:	$(ILIBS) $(ILIBS2) $(PROGS) lmdb.pc
-+all:	$(ILIBS)
- # Requires CPPFLAGS=-DMDB_VL32 and/or -DMDB_RPAGE_CACHE
- rall:	all $(RPROGS)
- 
+ IHDRS	= lmdb.h
+-ILIBS	= liblmdb.a liblmdb$(SOEXT)
++ILIBS	= liblmdb.a
+ IPROGS	= mdb_stat mdb_copy mdb_dump mdb_load
+ IDOCS	= mdb_stat.1 mdb_copy.1 mdb_dump.1 mdb_load.1
+ PROGS	= $(IPROGS) mtest mtest2 mtest3 mtest4 mtest5
+-all:	$(ILIBS) $(PROGS)
+-
 -install: $(ILIBS) $(IPROGS) $(IHDRS)
 -	mkdir -p $(DESTDIR)$(bindir)
-+install: $(ILIBS) $(IHDRS)
- 	mkdir -p $(DESTDIR)$(libdir)
- 	mkdir -p $(DESTDIR)$(includedir)
- 	mkdir -p $(DESTDIR)$(mandir)/man1
+-	mkdir -p $(DESTDIR)$(libdir)
+-	mkdir -p $(DESTDIR)$(includedir)
+-	mkdir -p $(DESTDIR)$(mandir)/man1
 -	for f in $(IPROGS); do cp $$f $(DESTDIR)$(bindir); done
- 	for f in $(ILIBS); do cp $$f $(DESTDIR)$(libdir); done
--	for f in $(ILIBS2); do cp $$f $(DESTDIR)$(libdir); \
--		i=`basename -s .$(ABIVER) $$f`; rm -f $(DESTDIR)$(libdir)/$$i; \
--		ln -s $$f $(DESTDIR)$(libdir)/$$i; \
--		i=`basename -s .$(LIBVER) $$i`; rm -f $(DESTDIR)$(libdir)/$$i; \
--		ln -s $$f $(DESTDIR)$(libdir)/$$i; done
- 	for f in $(IHDRS); do cp $$f $(DESTDIR)$(includedir); done
- 	for f in $(IDOCS); do cp $$f $(DESTDIR)$(mandir)/man1; done
+-	for f in $(ILIBS); do cp $$f $(DESTDIR)$(libdir); done
+-	for f in $(IHDRS); do cp $$f $(DESTDIR)$(includedir); done
+-	for f in $(IDOCS); do cp $$f $(DESTDIR)$(mandir)/man1; done
++all:	$(ILIBS)
++
++install: $(ILIBS) $(IHDRS)
++	mkdir -p $(libdir)
++	mkdir -p $(includedir)
++	mkdir -p $(mandir)/man1
++	for f in $(ILIBS); do cp $$f $(libdir); done
++	for f in $(IHDRS); do cp $$f $(includedir); done
++	for f in $(IDOCS); do cp $$f $(mandir)/man1; done
  
-@@ -85,7 +78,7 @@ test:	all
+ clean:
+ 	rm -rf $(PROGS) *.[ao] *.[ls]o *~ testdb
+@@ -61,8 +59,8 @@ test:	all
+ 	rm -rf testdb && mkdir testdb
  	./mtest && ./mdb_stat testdb
  
--liblmdb.a:	mdb.o midl.o module.o
--	$(AR) rs $@ mdb.o midl.o module.o
-+liblmdb.a:	mdb.lo midl.lo module.lo
-+	$(AR) rs $@ mdb.lo midl.lo module.lo
+-liblmdb.a:	mdb.o midl.o
+-	$(AR) rs $@ mdb.o midl.o
++liblmdb.a:	mdb.lo midl.lo
++	$(AR) rs $@ mdb.lo midl.lo
  
- liblmdb$(SOFULL):	mdb.lo midl.lo module.lo
+ liblmdb$(SOEXT):	mdb.lo midl.lo
  #	$(CC) $(LDFLAGS) -pthread -shared -Wl,-Bsymbolic -o $@ mdb.o midl.o $(SOLIBS)
