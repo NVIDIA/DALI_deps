@@ -15,6 +15,7 @@
 # limitations under the License.
 
 # For a snapshot of the code, see the README.rst
+export ROOT_DIR=$(pwd)
 pushd third_party/libsndfile
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2022-33065.patch
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2022-33065-extra-overflow-fixes.patch
