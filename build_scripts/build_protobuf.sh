@@ -66,7 +66,7 @@ if [ "${CC_COMP}" != "gcc" ]; then
         -DBUILD_SHARED_LIBS=OFF \
         -Dprotobuf_BUILD_TESTS=OFF \
         -Dprotobuf_FORCE_FETCH_DEPENDENCIES=ON \
-        -DWITH_PROTOC=${HOST_INSTALL_PREFIX}/bin/protoc \
+        -Dprotobuf_PROTOC_EXE=${HOST_INSTALL_PREFIX}/bin/protoc \
         ..
   make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
   make install
