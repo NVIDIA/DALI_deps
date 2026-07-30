@@ -20,6 +20,8 @@ mkdir -p build
 cd build
 
 # Validate before use
+JOBS=$(nproc)
+
 if [[ ! "$CC_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
   echo "ERROR: CC_COMP contains invalid characters" >&2
   exit 1
@@ -44,7 +46,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -Dprotobuf_BUILD_TESTS=OFF \
       -Dprotobuf_FORCE_FETCH_DEPENDENCIES=ON \
       ..
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+make -j"${JOBS}"
 make install
 # only when cross compiling
 if [ "${CC_COMP}" != "gcc" ]; then
@@ -68,7 +70,7 @@ if [ "${CC_COMP}" != "gcc" ]; then
         -Dprotobuf_FORCE_FETCH_DEPENDENCIES=ON \
         -DWITH_PROTOC=${HOST_INSTALL_PREFIX}/bin/protoc \
         ..
-  make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
+  make -j"${JOBS}"
   make install
 fi
 popd
