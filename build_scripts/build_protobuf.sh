@@ -19,23 +19,21 @@ pushd third_party/protobuf
 mkdir -p build
 cd build
 
+validate_alnum() {
+  local var_name=$1
+  local var_value=$2
+  if [[ ! "$var_value" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
+    echo "ERROR: $var_name contains invalid characters" >&2
+    exit 1
+  fi
+}
+
 # Validate before use
 JOBS=$(nproc)
 
-if [[ ! "$CC_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
-  echo "ERROR: CC_COMP contains invalid characters" >&2
-  exit 1
-fi
-# Validate before use
-if [[ ! "$CXX_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
-  echo "ERROR: CXX_COMP contains invalid characters" >&2
-  exit 1
-fi
-# Validate before use
-if [[ ! "$CMAKE_TARGET_ARCH" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
-  echo "ERROR: CMAKE_TARGET_ARCH contains invalid characters" >&2
-  exit 1
-fi
+validate_alnum CC_COMP "$CC_COMP"
+validate_alnum CXX_COMP "$CXX_COMP"
+validate_alnum CMAKE_TARGET_ARCH "$CMAKE_TARGET_ARCH"
 
 # Dprotobuf_FORCE_FETCH_DEPENDENCIES to ensure we don't use host dependencies
     CFLAGS="-fPIC" \
