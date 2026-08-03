@@ -15,6 +15,7 @@
 # limitations under the License.
 
 # For a snapshot of the code, see the README.rst
+export ROOT_DIR=$(pwd)
 pushd third_party/libtar
 patch -p1 < ${ROOT_DIR}/patches/libtar/libtar-1.2.20-CVE-2021-33643-CVE-2021-33644.patch
 patch -p1 < ${ROOT_DIR}/patches/libtar/libtar-1.2.20-CVE-2021-33645-CVE-2021-33646.patch
