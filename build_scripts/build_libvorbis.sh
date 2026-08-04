@@ -17,7 +17,7 @@
 # libvorbis
 export ROOT_DIR=${ROOT_DIR:-$(pwd)}
 source "$(dirname "${BASH_SOURCE[0]}")/validate_toolchain_env.sh"
-pushd third_party/vorbis
+pushd "${ROOT_DIR}/third_party/vorbis"
 mkdir -p build
 cd build
 echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake

@@ -18,7 +18,7 @@ export ROOT_DIR=${ROOT_DIR:-$(pwd)}
 source "$(dirname "${BASH_SOURCE[0]}")/validate_toolchain_env.sh"
 
 # libopus
-pushd third_party/opus
+pushd "${ROOT_DIR}/third_party/opus"
 
 # Configure step relies on the git tag to generate the version
 # Since we only have a shallow copy of the submodule, without tags, the version can't be determined

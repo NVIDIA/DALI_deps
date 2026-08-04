@@ -21,7 +21,7 @@ export ROOT_DIR=${ROOT_DIR:-$(pwd)}
 # dropped the legacy image decoder. That is also why libjpeg-turbo, libtiff, and
 # openjpeg are no longer kept as standalone submodules in this repo: OpenCV's
 # in-tree copies are sufficient for the tests.
-pushd third_party/opencv
+pushd "${ROOT_DIR}/third_party/opencv"
 mkdir -p build
 cd build
 # Validate no path traversal

@@ -25,7 +25,7 @@ CONFIGURE_ARGS=(--prefix="${INSTALL_PREFIX}" --disable-shared)
 if [[ -n ${HOST_ARCH_OPTION:-} ]]; then
   CONFIGURE_ARGS+=("${HOST_ARCH_OPTION}")
 fi
-pushd third_party/libtar
+pushd "${ROOT_DIR}/third_party/libtar"
 patch -p1 < ${ROOT_DIR}/patches/libtar/libtar-1.2.20-CVE-2021-33643-CVE-2021-33644.patch
 patch -p1 < ${ROOT_DIR}/patches/libtar/libtar-1.2.20-CVE-2021-33645-CVE-2021-33646.patch
 autoreconf --force --install

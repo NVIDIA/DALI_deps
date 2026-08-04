@@ -16,26 +16,12 @@
 
 # protobuf, make two steps for cross compilation if needed
 export ROOT_DIR=${ROOT_DIR:-$(pwd)}
-pushd third_party/protobuf
+source "$(dirname "${BASH_SOURCE[0]}")/validate_toolchain_env.sh"
+pushd "${ROOT_DIR}/third_party/protobuf"
 mkdir -p build
 cd build
 
-validate_alnum() {
-  local var_name=$1
-  local var_value=$2
-  if [[ ! "$var_value" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
-    echo "ERROR: $var_name contains invalid characters" >&2
-    exit 1
-  fi
-}
-
-# Validate before use
 JOBS=$(nproc)
-
-validate_alnum CC_COMP "$CC_COMP"
-validate_alnum CXX_COMP "$CXX_COMP"
-validate_alnum CMAKE_TARGET_ARCH "$CMAKE_TARGET_ARCH"
-
 # Dprotobuf_FORCE_FETCH_DEPENDENCIES to ensure we don't use host dependencies
     CFLAGS="-fPIC" \
     CXXFLAGS="-fPIC -std=c++17" \
