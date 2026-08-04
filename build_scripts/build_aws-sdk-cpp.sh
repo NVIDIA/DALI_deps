@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export ROOT_DIR=$(pwd)
+export ROOT_DIR=${ROOT_DIR:-$(pwd)}
 # Validate before use
 if [[ ! "$CC_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
   echo "ERROR: CC_COMP contains invalid characters" >&2
@@ -74,8 +74,9 @@ case "$CMAKE_TARGET_ARCH" in
     OPTS+=(linux-aarch64)
     ;;
 esac
-CC=${CC_COMP} CXX=${CXX_COMP}" ${CPPFLAGS} ${CFLAGS}" \
-  ${_CONFIGURATOR} ${OPTS[@]} ${LDFLAGS}
+CC="${CC_COMP}" CXX="${CXX_COMP}" CPPFLAGS="${CPPFLAGS:-}" \
+  CFLAGS="${CFLAGS:-} -fPIC -Wa,--noexecstack" LDFLAGS="${LDFLAGS:-}" \
+  "${_CONFIGURATOR}" "${OPTS[@]}"
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install_sw install_ssldirs
 

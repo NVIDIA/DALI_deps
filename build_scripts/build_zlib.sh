@@ -15,6 +15,7 @@
 # limitations under the License.
 
 #zlib
+export ROOT_DIR=${ROOT_DIR:-$(pwd)}
 pushd third_party/zlib
 mkdir -p build
 cd build

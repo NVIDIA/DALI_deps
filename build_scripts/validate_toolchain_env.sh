@@ -1,6 +1,6 @@
 #!/bin/bash -xe
 
-# Copyright (c) 2021, NVIDIA CORPORATION. All rights reserved.
+# Copyright (c) 2026, NVIDIA CORPORATION. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,11 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# LMDB
-export ROOT_DIR=${ROOT_DIR:-$(pwd)}
-pushd third_party/lmdb/libraries/liblmdb/
-patch -p3 < ${ROOT_DIR}/patches/Makefile-lmdb.patch
-    XCFLAGS="-fPIC" CC=${CC_COMP} CXX=${CXX_COMP} prefix=${INSTALL_PREFIX} \
-make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
-prefix=${INSTALL_PREFIX} make install
-popd
+for toolchain_var in CC_COMP CXX_COMP CMAKE_TARGET_ARCH; do
+  if [[ ! ${!toolchain_var} =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
+    echo "ERROR: ${toolchain_var} contains invalid characters" >&2
+    exit 1
+  fi
+done

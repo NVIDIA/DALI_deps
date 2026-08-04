@@ -15,6 +15,7 @@
 # limitations under the License.
 
 # zstandard compression library
+export ROOT_DIR=${ROOT_DIR:-$(pwd)}
 pushd third_party/zstd
    CFLAGS="-fPIC" \
    CXXFLAGS="-fPIC" \

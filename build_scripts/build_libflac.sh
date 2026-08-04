@@ -15,6 +15,8 @@
 # limitations under the License.
 
 # flac
+export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+source "$(dirname "${BASH_SOURCE[0]}")/validate_toolchain_env.sh"
 pushd third_party/flac
 mkdir -p build
 cd build
