@@ -14,12 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export CC_COMP=${CC_COMP:-gcc}
-export CXX_COMP=${CXX_COMP:-g++}
-export CMAKE_TARGET_ARCH=${CMAKE_TARGET_ARCH:-$(uname -m)}
-
 for toolchain_var in CC_COMP CXX_COMP CMAKE_TARGET_ARCH; do
-  if [[ ! ${!toolchain_var} =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
+  if [[ -n ${!toolchain_var} && ! ${!toolchain_var} =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
     echo "ERROR: ${toolchain_var} contains invalid characters" >&2
     exit 1
   fi
