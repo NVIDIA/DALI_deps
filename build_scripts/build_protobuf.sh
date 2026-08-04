@@ -15,9 +15,8 @@
 # limitations under the License.
 
 # protobuf, make two steps for cross compilation if needed
-export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
-source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
-pushd "${ROOT_DIR}/third_party/protobuf"
+export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+pushd third_party/protobuf
 mkdir -p build
 cd build
 

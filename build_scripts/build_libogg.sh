@@ -15,9 +15,9 @@
 # limitations under the License.
 
 # libogg
-export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
-source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
-pushd "${ROOT_DIR}/third_party/ogg"
+export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+source "$(dirname "${BASH_SOURCE[0]}")/validate_toolchain_env.sh"
+pushd third_party/ogg
 mkdir -p build
 cd build
 echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake

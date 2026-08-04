@@ -15,8 +15,8 @@
 # limitations under the License.
 
 # LMDB
-export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
-pushd "${ROOT_DIR}/third_party/lmdb/libraries/liblmdb/"
+export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+pushd third_party/lmdb/libraries/liblmdb/
 patch -p3 < ${ROOT_DIR}/patches/Makefile-lmdb.patch
     XCFLAGS="-fPIC" CC=${CC_COMP} CXX=${CXX_COMP} prefix=${INSTALL_PREFIX} \
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"

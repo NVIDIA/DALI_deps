@@ -14,8 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
-source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
+export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+source "$(dirname "${BASH_SOURCE[0]}")/validate_toolchain_env.sh"
 
 # libopus
 pushd "${ROOT_DIR}/third_party/opus"

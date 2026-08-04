@@ -15,9 +15,8 @@
 # limitations under the License.
 
 #zlib
-export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
-source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
-pushd "${ROOT_DIR}/third_party/zlib"
+export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+pushd third_party/zlib
 mkdir -p build
 cd build
 

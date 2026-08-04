@@ -15,9 +15,9 @@
 # limitations under the License.
 
 # For a snapshot of the code, see the README.rst
-export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
-source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
-pushd "${ROOT_DIR}/third_party/libsndfile"
+export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+source "$(dirname "${BASH_SOURCE[0]}")/validate_toolchain_env.sh"
+pushd third_party/libsndfile
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2022-33065.patch
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2022-33065-extra-overflow-fixes.patch
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2024-50612.patch

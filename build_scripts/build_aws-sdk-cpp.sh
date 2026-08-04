@@ -14,8 +14,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
-source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
+export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+# Validate before use
+if [[ ! "$CC_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
+  echo "ERROR: CC_COMP contains invalid characters" >&2
+  exit 1
+fi
+# Validate before use
+if [[ ! "$CXX_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
+  echo "ERROR: CXX_COMP contains invalid characters" >&2
+  exit 1
+fi
+# Validate before use
+if [[ ! "$CMAKE_TARGET_ARCH" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
+  echo "ERROR: CMAKE_TARGET_ARCH contains invalid characters" >&2
+  exit 1
+fi
 
 mkdir -p ${ROOT_DIR}/third_party/openssl/build
 mkdir -p ${ROOT_DIR}/third_party/curl/build
@@ -68,8 +82,7 @@ case "$OPENSSL_TARGET_ARCH" in
     ;;
 esac
 CC="${CC_COMP}" CXX="${CXX_COMP}" CPPFLAGS="${CPPFLAGS:-}" \
-  CFLAGS="${CFLAGS:-} -fPIC -Wa,--noexecstack" \
-  CXXFLAGS="${CXXFLAGS:-} -fPIC -Wa,--noexecstack" LDFLAGS="${LDFLAGS:-}" \
+  CFLAGS="${CFLAGS:-} -fPIC -Wa,--noexecstack" LDFLAGS="${LDFLAGS:-}" \
   "${_CONFIGURATOR}" "${OPTS[@]}"
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install_sw install_ssldirs
