@@ -16,7 +16,8 @@
 
 # protobuf, make two steps for cross compilation if needed
 export ROOT_DIR=${ROOT_DIR:-$(pwd)}
-pushd third_party/protobuf
+source "$(dirname "${BASH_SOURCE[0]}")/validate_toolchain_env.sh"
+pushd "${ROOT_DIR}/third_party/protobuf"
 mkdir -p build
 cd build
 

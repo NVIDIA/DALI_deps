@@ -16,7 +16,7 @@
 
 # zstandard compression library
 export ROOT_DIR=${ROOT_DIR:-$(pwd)}
-pushd third_party/zstd
+pushd "${ROOT_DIR}/third_party/zstd"
    CFLAGS="-fPIC" \
    CXXFLAGS="-fPIC" \
    CC=${CC_COMP} \
