@@ -57,7 +57,7 @@ PACKAGE_LIST=(
     "libogg"
     "libvorbis" # Install after libogg
     "libopus"
-    "libsnd"
+    "libsndfile"
     "libtar"
     "cfitsio"
     "aws-sdk-cpp"
