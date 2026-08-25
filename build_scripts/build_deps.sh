@@ -40,11 +40,11 @@ echo ${EXTRA_LIBSND_FLAGS}
 echo ${CLEANUP}
 
 if [ "$CLEANUP" -eq 1 ]; then
-    git clean -fdx
-    git submodule init
-    git submodule update --init --recursive
-    git submodule foreach 'git clean -fdx'
-    git submodule foreach 'git checkout --force'
+    git -C "${ROOT_DIR}" clean -fdx
+    git -C "${ROOT_DIR}" submodule init
+    git -C "${ROOT_DIR}" submodule update --init --recursive
+    git -C "${ROOT_DIR}" submodule foreach 'git clean -fdx'
+    git -C "${ROOT_DIR}" submodule foreach 'git checkout --force'
 fi
 
 PACKAGE_LIST=(
