@@ -20,6 +20,11 @@ if [[ ( -n ${CC_COMP:-} && -z ${CXX_COMP:-} ) ||
   exit 1
 fi
 
+if [[ -n ${CC_COMP:-} && ${CC_COMP} != gcc && -z ${CMAKE_TARGET_ARCH:-} ]]; then
+  echo "ERROR: CMAKE_TARGET_ARCH must be set for cross-compilation" >&2
+  exit 1
+fi
+
 for toolchain_var in CC_COMP CXX_COMP CMAKE_TARGET_ARCH; do
   if [[ -n ${!toolchain_var} && ! ${!toolchain_var} =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
     echo "ERROR: ${toolchain_var} contains invalid characters" >&2
