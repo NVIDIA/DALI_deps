@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # zstandard compression library
-export ROOT_DIR=$(realpath "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..")
+export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
 pushd "${ROOT_DIR}/third_party/zstd"
    CFLAGS="-fPIC" \
    CXXFLAGS="-fPIC" \
