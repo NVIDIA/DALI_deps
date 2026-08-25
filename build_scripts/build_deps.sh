@@ -15,7 +15,7 @@
 # limitations under the License.
 
 export SCRIPT_DIR=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
-export ROOT_DIR=$(realpath "${SCRIPT_DIR}/..")
+export ROOT_DIR=$(realpath "${ROOT_DIR:-${SCRIPT_DIR}/..}")
 export HOST_INSTALL_PREFIX=${HOST_INSTALL_PREFIX:-/usr/local}
 export INSTALL_PREFIX=${INSTALL_PREFIX:-$HOST_INSTALL_PREFIX}
 source "${SCRIPT_DIR}/validate_toolchain_env.sh"
