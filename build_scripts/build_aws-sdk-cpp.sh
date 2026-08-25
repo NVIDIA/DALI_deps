@@ -28,11 +28,17 @@ export DEPS_OPENSSLDIR=${ROOT_DIR}/third_party/aws-sdk-cpp/openssldir
 export TOOLCHAIN_FILE=${ROOT_DIR}/third_party/aws-sdk-cpp/toolchain.cmake
 
 echo "set(CMAKE_SYSTEM_NAME Linux)" > ${TOOLCHAIN_FILE}
-echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> ${TOOLCHAIN_FILE}
-echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> ${TOOLCHAIN_FILE}
-echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> ${TOOLCHAIN_FILE}
+if [[ -n ${CMAKE_TARGET_ARCH:-} ]]; then
+    echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> ${TOOLCHAIN_FILE}
+fi
+if [[ -n ${CC_COMP:-} ]]; then
+    echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> ${TOOLCHAIN_FILE}
+fi
+if [[ -n ${CXX_COMP:-} ]]; then
+    echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> ${TOOLCHAIN_FILE}
+fi
 # only when cross compiling
-if [ "${CC_COMP}" != "gcc" ]; then
+if [[ -n ${CC_COMP:-} && ${CC_COMP} != gcc ]]; then
     echo "set(CMAKE_FIND_ROOT_PATH ${INSTALL_PREFIX})" >> ${TOOLCHAIN_FILE}
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> ${TOOLCHAIN_FILE}
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> ${TOOLCHAIN_FILE}
@@ -52,7 +58,8 @@ OPTS+=(--libdir=lib)
 OPTS+=(--prefix=${DEPS_PREFIX})
 OPTS+=(--openssldir=${DEPS_OPENSSLDIR})
 _CONFIGURATOR="./Configure"
-case "$CMAKE_TARGET_ARCH" in
+OPENSSL_TARGET_ARCH=${CMAKE_TARGET_ARCH:-$(uname -m)}
+case "$OPENSSL_TARGET_ARCH" in
   x86_64)
     OPTS+=(linux-x86_64)
     ;;

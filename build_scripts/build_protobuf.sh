@@ -34,12 +34,18 @@ cmake -DCMAKE_BUILD_TYPE=Release \
 make -j"${JOBS}"
 make install
 # only when cross compiling
-if [ "${CC_COMP}" != "gcc" ]; then
+if [[ -n ${CC_COMP:-} && ${CC_COMP} != gcc ]]; then
   rm -rf *
   echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
-  echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
-  echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
-  echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> toolchain.cmake
+  if [[ -n ${CMAKE_TARGET_ARCH:-} ]]; then
+    echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
+  fi
+  if [[ -n ${CC_COMP:-} ]]; then
+    echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
+  fi
+  if [[ -n ${CXX_COMP:-} ]]; then
+    echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> toolchain.cmake
+  fi
   echo "set(CMAKE_FIND_ROOT_PATH ${INSTALL_PREFIX})" >> toolchain.cmake
   echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> toolchain.cmake
   echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> toolchain.cmake
