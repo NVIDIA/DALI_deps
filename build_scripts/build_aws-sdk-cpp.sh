@@ -68,7 +68,8 @@ case "$OPENSSL_TARGET_ARCH" in
     ;;
 esac
 CC="${CC_COMP}" CXX="${CXX_COMP}" CPPFLAGS="${CPPFLAGS:-}" \
-  CFLAGS="${CFLAGS:-} -fPIC -Wa,--noexecstack" LDFLAGS="${LDFLAGS:-}" \
+  CFLAGS="${CFLAGS:-} -fPIC -Wa,--noexecstack" \
+  CXXFLAGS="${CXXFLAGS:-} -fPIC -Wa,--noexecstack" LDFLAGS="${LDFLAGS:-}" \
   "${_CONFIGURATOR}" "${OPTS[@]}"
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install_sw install_ssldirs
