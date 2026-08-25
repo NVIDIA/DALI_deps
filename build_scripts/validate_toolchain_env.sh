@@ -14,6 +14,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+if [[ ( -n ${CC_COMP:-} && -z ${CXX_COMP:-} ) ||
+      ( -z ${CC_COMP:-} && -n ${CXX_COMP:-} ) ]]; then
+  echo "ERROR: CC_COMP and CXX_COMP must be set together" >&2
+  exit 1
+fi
+
 for toolchain_var in CC_COMP CXX_COMP CMAKE_TARGET_ARCH; do
   if [[ -n ${!toolchain_var} && ! ${!toolchain_var} =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
     echo "ERROR: ${toolchain_var} contains invalid characters" >&2
