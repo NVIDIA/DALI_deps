@@ -14,8 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
-source "$(dirname "${BASH_SOURCE[0]}")/validate_toolchain_env.sh"
+export ROOT_DIR=$(realpath "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..")
+source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
 
 mkdir -p ${ROOT_DIR}/third_party/openssl/build
 mkdir -p ${ROOT_DIR}/third_party/curl/build

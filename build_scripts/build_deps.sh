@@ -14,8 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-export ROOT_DIR=$(cd "${SCRIPT_DIR}/.." && pwd)
+export SCRIPT_DIR=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
+export ROOT_DIR=$(realpath "${SCRIPT_DIR}/..")
 export HOST_INSTALL_PREFIX=${HOST_INSTALL_PREFIX:-/usr/local}
 export INSTALL_PREFIX=${INSTALL_PREFIX:-$HOST_INSTALL_PREFIX}
 source "${SCRIPT_DIR}/validate_toolchain_env.sh"

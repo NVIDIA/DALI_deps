@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # LMDB
-export ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+export ROOT_DIR=$(realpath "$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..")
 pushd "${ROOT_DIR}/third_party/lmdb/libraries/liblmdb/"
 patch -p3 < ${ROOT_DIR}/patches/Makefile-lmdb.patch
     XCFLAGS="-fPIC" CC=${CC_COMP} CXX=${CXX_COMP} prefix=${INSTALL_PREFIX} \
