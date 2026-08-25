@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # For a snapshot of the code, see the README.rst
-export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+export ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 if [[ -n ${HOST_ARCH_OPTION:-} && ! $HOST_ARCH_OPTION =~ ^--host=[a-zA-Z0-9_-]+$ ]]; then
   echo "ERROR: HOST_ARCH_OPTION contains invalid characters" >&2
   exit 1

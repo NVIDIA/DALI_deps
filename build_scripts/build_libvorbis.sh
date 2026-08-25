@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # libvorbis
-export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+export ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 source "$(dirname "${BASH_SOURCE[0]}")/validate_toolchain_env.sh"
 pushd "${ROOT_DIR}/third_party/vorbis"
 mkdir -p build

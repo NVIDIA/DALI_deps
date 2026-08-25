@@ -14,8 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export ROOT_DIR=${ROOT_DIR:-$(pwd)}
-export SCRIPT_DIR=$(cd $(dirname $0) && pwd)
+export SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+export ROOT_DIR=$(cd "${SCRIPT_DIR}/.." && pwd)
 export HOST_INSTALL_PREFIX=${HOST_INSTALL_PREFIX:-/usr/local}
 export INSTALL_PREFIX=${INSTALL_PREFIX:-$HOST_INSTALL_PREFIX}
 export CC_COMP=${CC_COMP:-gcc}
