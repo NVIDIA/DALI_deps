@@ -18,13 +18,13 @@ export SCRIPT_DIR=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
 export ROOT_DIR=$(realpath "${SCRIPT_DIR}/..")
 export HOST_INSTALL_PREFIX=${HOST_INSTALL_PREFIX:-/usr/local}
 export INSTALL_PREFIX=${INSTALL_PREFIX:-$HOST_INSTALL_PREFIX}
+source "${SCRIPT_DIR}/validate_toolchain_env.sh"
 export CC_COMP=${CC_COMP:-gcc}
 export CXX_COMP=${CXX_COMP:-g++}
 export WITH_FFMPEG=${WITH_FFMPEG:-1}
 export OPENCV_TOOLCHAIN_FILE=${OPENCV_TOOLCHAIN_FILE:-"linux/gnu.toolchain.cmake"}
 export CMAKE_TARGET_ARCH=${CMAKE_TARGET_ARCH:-$(uname -m)}
 export CLEANUP=${CLEANUP:-0}
-source "${SCRIPT_DIR}/validate_toolchain_env.sh"
 echo ${INSTALL_PREFIX}
 echo ${CC_COMP}
 echo ${CXX_COMP}
