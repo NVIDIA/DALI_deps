@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # For a snapshot of the code, see the README.rst
-export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+export ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 if [ ${WITH_FFMPEG} -gt 0 ]; then
     pushd "${ROOT_DIR}/third_party/FFmpeg"
     patch -p1 < ${ROOT_DIR}/patches/ffmpeg/ffmpeg-01-CVE-2026-66037-iamf-count-label.patch

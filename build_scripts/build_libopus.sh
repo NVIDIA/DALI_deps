@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+export ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 source "$(dirname "${BASH_SOURCE[0]}")/validate_toolchain_env.sh"
 
 # libopus

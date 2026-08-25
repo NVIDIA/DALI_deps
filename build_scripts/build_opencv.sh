@@ -15,7 +15,7 @@
 # limitations under the License.
 
 # OpenCV
-export ROOT_DIR=${ROOT_DIR:-$(pwd)}
+export ROOT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 # Note: OpenCV's `imgcodecs` module (and its bundled JPEG/TIFF/OpenJPEG/PNG/WebP
 # image-format libraries) is only needed by DALI's test suite — production DALI
 # dropped the legacy image decoder. That is also why libjpeg-turbo, libtiff, and
