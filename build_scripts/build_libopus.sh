@@ -14,10 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export ROOT_DIR=$(pwd)
+export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
+source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
 
 # libopus
-pushd third_party/opus
+pushd "${ROOT_DIR}/third_party/opus"
 
 # Configure step relies on the git tag to generate the version
 # Since we only have a shallow copy of the submodule, without tags, the version can't be determined
@@ -29,11 +30,17 @@ git tag $OPUS_VERSION || true
 mkdir -p build
 cd build
 echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
-echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
-echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
-echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> toolchain.cmake
+if [[ -n ${CMAKE_TARGET_ARCH:-} ]]; then
+    echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
+fi
+if [[ -n ${CC_COMP:-} ]]; then
+    echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
+fi
+if [[ -n ${CXX_COMP:-} ]]; then
+    echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> toolchain.cmake
+fi
 # only when cross compiling
-if [ "${CC_COMP}" != "gcc" ]; then
+if [[ -n ${CC_COMP:-} && ${CC_COMP} != gcc ]]; then
     echo "set(CMAKE_FIND_ROOT_PATH ${INSTALL_PREFIX})" >> toolchain.cmake
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> toolchain.cmake
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> toolchain.cmake

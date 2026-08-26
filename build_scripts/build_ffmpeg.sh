@@ -15,8 +15,9 @@
 # limitations under the License.
 
 # For a snapshot of the code, see the README.rst
+export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
 if [ ${WITH_FFMPEG} -gt 0 ]; then
-    pushd third_party/FFmpeg
+    pushd "${ROOT_DIR}/third_party/FFmpeg"
     patch -p1 < ${ROOT_DIR}/patches/ffmpeg/ffmpeg-01-CVE-2026-66037-iamf-count-label.patch
     patch -p1 < ${ROOT_DIR}/patches/ffmpeg/ffmpeg-02-CVE-2026-64834-rtpdec-asf-infinite-loop.patch
     patch -p1 < ${ROOT_DIR}/patches/ffmpeg/ffmpeg-03-CVE-2026-64830-vobsub-stream-count.patch

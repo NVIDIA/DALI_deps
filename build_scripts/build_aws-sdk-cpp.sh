@@ -14,22 +14,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export ROOT_DIR=$(pwd)
-# Validate before use
-if [[ ! "$CC_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
-  echo "ERROR: CC_COMP contains invalid characters" >&2
-  exit 1
-fi
-# Validate before use
-if [[ ! "$CXX_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
-  echo "ERROR: CXX_COMP contains invalid characters" >&2
-  exit 1
-fi
-# Validate before use
-if [[ ! "$CMAKE_TARGET_ARCH" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
-  echo "ERROR: CMAKE_TARGET_ARCH contains invalid characters" >&2
-  exit 1
-fi
+export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
+source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
 
 mkdir -p ${ROOT_DIR}/third_party/openssl/build
 mkdir -p ${ROOT_DIR}/third_party/curl/build
@@ -42,11 +28,17 @@ export DEPS_OPENSSLDIR=${ROOT_DIR}/third_party/aws-sdk-cpp/openssldir
 export TOOLCHAIN_FILE=${ROOT_DIR}/third_party/aws-sdk-cpp/toolchain.cmake
 
 echo "set(CMAKE_SYSTEM_NAME Linux)" > ${TOOLCHAIN_FILE}
-echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> ${TOOLCHAIN_FILE}
-echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> ${TOOLCHAIN_FILE}
-echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> ${TOOLCHAIN_FILE}
+if [[ -n ${CMAKE_TARGET_ARCH:-} ]]; then
+    echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> ${TOOLCHAIN_FILE}
+fi
+if [[ -n ${CC_COMP:-} ]]; then
+    echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> ${TOOLCHAIN_FILE}
+fi
+if [[ -n ${CXX_COMP:-} ]]; then
+    echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> ${TOOLCHAIN_FILE}
+fi
 # only when cross compiling
-if [ "${CC_COMP}" != "gcc" ]; then
+if [[ -n ${CC_COMP:-} && ${CC_COMP} != gcc ]]; then
     echo "set(CMAKE_FIND_ROOT_PATH ${INSTALL_PREFIX})" >> ${TOOLCHAIN_FILE}
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> ${TOOLCHAIN_FILE}
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> ${TOOLCHAIN_FILE}
@@ -66,7 +58,8 @@ OPTS+=(--libdir=lib)
 OPTS+=(--prefix=${DEPS_PREFIX})
 OPTS+=(--openssldir=${DEPS_OPENSSLDIR})
 _CONFIGURATOR="./Configure"
-case "$CMAKE_TARGET_ARCH" in
+OPENSSL_TARGET_ARCH=${CMAKE_TARGET_ARCH:-$(uname -m)}
+case "$OPENSSL_TARGET_ARCH" in
   x86_64)
     OPTS+=(linux-x86_64)
     ;;
@@ -74,8 +67,10 @@ case "$CMAKE_TARGET_ARCH" in
     OPTS+=(linux-aarch64)
     ;;
 esac
-CC=${CC_COMP} CXX=${CXX_COMP}" ${CPPFLAGS} ${CFLAGS}" \
-  ${_CONFIGURATOR} ${OPTS[@]} ${LDFLAGS}
+CC="${CC_COMP}" CXX="${CXX_COMP}" CPPFLAGS="${CPPFLAGS:-}" \
+  CFLAGS="${CFLAGS:-} -fPIC -Wa,--noexecstack" \
+  CXXFLAGS="${CXXFLAGS:-} -fPIC -Wa,--noexecstack" LDFLAGS="${LDFLAGS:-}" \
+  "${_CONFIGURATOR}" "${OPTS[@]}"
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 make install_sw install_ssldirs
 

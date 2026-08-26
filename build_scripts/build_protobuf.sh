@@ -15,26 +15,13 @@
 # limitations under the License.
 
 # protobuf, make two steps for cross compilation if needed
-pushd third_party/protobuf
+export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
+source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
+pushd "${ROOT_DIR}/third_party/protobuf"
 mkdir -p build
 cd build
 
-validate_alnum() {
-  local var_name=$1
-  local var_value=$2
-  if [[ ! "$var_value" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
-    echo "ERROR: $var_name contains invalid characters" >&2
-    exit 1
-  fi
-}
-
-# Validate before use
 JOBS=$(nproc)
-
-validate_alnum CC_COMP "$CC_COMP"
-validate_alnum CXX_COMP "$CXX_COMP"
-validate_alnum CMAKE_TARGET_ARCH "$CMAKE_TARGET_ARCH"
-
 # Dprotobuf_FORCE_FETCH_DEPENDENCIES to ensure we don't use host dependencies
     CFLAGS="-fPIC" \
     CXXFLAGS="-fPIC -std=c++17" \
@@ -47,12 +34,18 @@ cmake -DCMAKE_BUILD_TYPE=Release \
 make -j"${JOBS}"
 make install
 # only when cross compiling
-if [ "${CC_COMP}" != "gcc" ]; then
+if [[ -n ${CC_COMP:-} && ${CC_COMP} != gcc ]]; then
   rm -rf *
   echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
-  echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
-  echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
-  echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> toolchain.cmake
+  if [[ -n ${CMAKE_TARGET_ARCH:-} ]]; then
+    echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
+  fi
+  if [[ -n ${CC_COMP:-} ]]; then
+    echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
+  fi
+  if [[ -n ${CXX_COMP:-} ]]; then
+    echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> toolchain.cmake
+  fi
   echo "set(CMAKE_FIND_ROOT_PATH ${INSTALL_PREFIX})" >> toolchain.cmake
   echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> toolchain.cmake
   echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> toolchain.cmake

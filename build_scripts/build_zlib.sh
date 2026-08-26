@@ -15,32 +15,24 @@
 # limitations under the License.
 
 #zlib
-pushd third_party/zlib
+export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
+source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
+pushd "${ROOT_DIR}/third_party/zlib"
 mkdir -p build
 cd build
 
-# Validate before use
-if [[ ! "$CC_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
-  echo "ERROR: CC_COMP contains invalid characters" >&2
-  exit 1
-fi
-# Validate before use
-if [[ ! "$CXX_COMP" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
-  echo "ERROR: CXX_COMP contains invalid characters" >&2
-  exit 1
-fi
-# Validate before use
-if [[ ! "$CMAKE_TARGET_ARCH" =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
-  echo "ERROR: CMAKE_TARGET_ARCH contains invalid characters" >&2
-  exit 1
-fi
-
 echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
-echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
-echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
-echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> toolchain.cmake
+if [[ -n ${CMAKE_TARGET_ARCH:-} ]]; then
+    echo "set(CMAKE_SYSTEM_PROCESSOR ${CMAKE_TARGET_ARCH})" >> toolchain.cmake
+fi
+if [[ -n ${CC_COMP:-} ]]; then
+    echo "set(CMAKE_C_COMPILER ${CC_COMP})" >> toolchain.cmake
+fi
+if [[ -n ${CXX_COMP:-} ]]; then
+    echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> toolchain.cmake
+fi
 # only when cross compiling
-if [ "${CC_COMP}" != "gcc" ]; then
+if [[ -n ${CC_COMP:-} && ${CC_COMP} != gcc ]]; then
     echo "set(CMAKE_FIND_ROOT_PATH ${INSTALL_PREFIX})" >> toolchain.cmake
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> toolchain.cmake
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> toolchain.cmake

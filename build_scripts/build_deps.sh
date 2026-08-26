@@ -14,10 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-export ROOT_DIR=$(pwd)
-export SCRIPT_DIR=$(cd $(dirname $0) && pwd)
+export SCRIPT_DIR=$(dirname "$(realpath "${BASH_SOURCE[0]}")")
+export ROOT_DIR=$(realpath "${ROOT_DIR:-${SCRIPT_DIR}/..}")
 export HOST_INSTALL_PREFIX=${HOST_INSTALL_PREFIX:-/usr/local}
 export INSTALL_PREFIX=${INSTALL_PREFIX:-$HOST_INSTALL_PREFIX}
+source "${SCRIPT_DIR}/validate_toolchain_env.sh"
 export CC_COMP=${CC_COMP:-gcc}
 export CXX_COMP=${CXX_COMP:-g++}
 export WITH_FFMPEG=${WITH_FFMPEG:-1}
@@ -39,11 +40,11 @@ echo ${EXTRA_LIBSND_FLAGS}
 echo ${CLEANUP}
 
 if [ "$CLEANUP" -eq 1 ]; then
-    git clean -fdx
-    git submodule init
-    git submodule update --init --recursive
-    git submodule foreach 'git clean -fdx'
-    git submodule foreach 'git checkout --force'
+    git -C "${ROOT_DIR}" clean -fdx
+    git -C "${ROOT_DIR}" submodule init
+    git -C "${ROOT_DIR}" submodule update --init --recursive
+    git -C "${ROOT_DIR}" submodule foreach 'git clean -fdx'
+    git -C "${ROOT_DIR}" submodule foreach 'git checkout --force'
 fi
 
 PACKAGE_LIST=(

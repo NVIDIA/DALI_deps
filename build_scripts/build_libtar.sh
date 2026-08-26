@@ -15,8 +15,17 @@
 # limitations under the License.
 
 # For a snapshot of the code, see the README.rst
-export ROOT_DIR=$(pwd)
-pushd third_party/libtar
+export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
+if [[ -n ${HOST_ARCH_OPTION:-} && ! $HOST_ARCH_OPTION =~ ^--host=[a-zA-Z0-9_-]+$ ]]; then
+  echo "ERROR: HOST_ARCH_OPTION contains invalid characters" >&2
+  exit 1
+fi
+
+CONFIGURE_ARGS=(--prefix="${INSTALL_PREFIX}" --disable-shared)
+if [[ -n ${HOST_ARCH_OPTION:-} ]]; then
+  CONFIGURE_ARGS+=("${HOST_ARCH_OPTION}")
+fi
+pushd "${ROOT_DIR}/third_party/libtar"
 patch -p1 < ${ROOT_DIR}/patches/libtar/libtar-1.2.20-CVE-2021-33643-CVE-2021-33644.patch
 patch -p1 < ${ROOT_DIR}/patches/libtar/libtar-1.2.20-CVE-2021-33645-CVE-2021-33646.patch
 autoreconf --force --install
@@ -24,10 +33,7 @@ CC=${CC_COMP} \
 CXX=${CXX_COMP} \
 CFLAGS="-fPIC" \
 CXXFLAGS="-fPIC" \
-./configure \
-    ${HOST_ARCH_OPTION} \
-    --prefix=${INSTALL_PREFIX} \
-    --disable-shared
+./configure "${CONFIGURE_ARGS[@]}"
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"
 cd lib
 make install
