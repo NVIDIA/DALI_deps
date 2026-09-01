@@ -38,7 +38,7 @@ if [[ -n ${CXX_COMP:-} ]]; then
 fi
 # only when cross compiling
 if [[ -n ${CC_COMP:-} && ${CC_COMP} != gcc ]]; then
-    echo "set(CMAKE_FIND_ROOT_PATH ${INSTALL_PREFIX})" >> toolchain.cmake
+    echo "set(CMAKE_FIND_ROOT_PATH \"${INSTALL_PREFIX}\")" >> toolchain.cmake
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> toolchain.cmake
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> toolchain.cmake
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)" >> toolchain.cmake
