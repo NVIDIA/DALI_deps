@@ -46,3 +46,21 @@
 [submodule "third_party/curl"]
 	path = third_party/curl
 	url = https://github.com/curl/curl.git
+[submodule "third_party/google-cloud-cpp"]
+	path = third_party/google-cloud-cpp
+	url = https://github.com/googleapis/google-cloud-cpp
+[submodule "third_party/grpc"]
+	path = third_party/grpc
+	url = https://github.com/grpc/grpc
+[submodule "third_party/opentelemetry-cpp"]
+	path = third_party/opentelemetry-cpp
+	url = https://github.com/open-telemetry/opentelemetry-cpp
+[submodule "third_party/googletest"]
+	path = third_party/googletest
+	url = https://github.com/google/googletest
+[submodule "third_party/benchmark"]
+	path = third_party/benchmark
+	url = https://github.com/google/benchmark
+[submodule "third_party/nlohmann_json"]
+	path = third_party/nlohmann_json
+	url = https://github.com/nlohmann/json
