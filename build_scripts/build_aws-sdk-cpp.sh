@@ -17,6 +17,13 @@
 export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
 source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
 
+for flag_var in CPPFLAGS LDFLAGS; do
+  if [[ -n ${!flag_var:-} && ! ${!flag_var} =~ ^[a-zA-Z0-9/_.+=,\ -]+$ ]]; then
+    echo "ERROR: ${flag_var} contains invalid characters" >&2
+    exit 1
+  fi
+done
+
 mkdir -p ${ROOT_DIR}/third_party/openssl/build
 mkdir -p ${ROOT_DIR}/third_party/curl/build
 mkdir -p ${ROOT_DIR}/third_party/aws-sdk-cpp/build
@@ -39,7 +46,7 @@ if [[ -n ${CXX_COMP:-} ]]; then
 fi
 # only when cross compiling
 if [[ -n ${CC_COMP:-} && ${CC_COMP} != gcc ]]; then
-    echo "set(CMAKE_FIND_ROOT_PATH ${INSTALL_PREFIX})" >> ${TOOLCHAIN_FILE}
+    echo "set(CMAKE_FIND_ROOT_PATH \"${INSTALL_PREFIX}\")" >> ${TOOLCHAIN_FILE}
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> ${TOOLCHAIN_FILE}
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> ${TOOLCHAIN_FILE}
     echo "set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)" >> ${TOOLCHAIN_FILE}

@@ -20,7 +20,7 @@ if [[ ( -n ${CC_COMP:-} && -z ${CXX_COMP:-} ) ||
   exit 1
 fi
 
-for toolchain_var in CC_COMP CXX_COMP CMAKE_TARGET_ARCH; do
+for toolchain_var in CC_COMP CXX_COMP CMAKE_TARGET_ARCH INSTALL_PREFIX HOST_INSTALL_PREFIX; do
   if [[ -n ${!toolchain_var} && ! ${!toolchain_var} =~ ^[a-zA-Z0-9/_.+-]+$ ]]; then
     echo "ERROR: ${toolchain_var} contains invalid characters" >&2
     exit 1

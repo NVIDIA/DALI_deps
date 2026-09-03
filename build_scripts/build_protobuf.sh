@@ -46,7 +46,7 @@ if [[ -n ${CC_COMP:-} && ${CC_COMP} != gcc ]]; then
   if [[ -n ${CXX_COMP:-} ]]; then
     echo "set(CMAKE_CXX_COMPILER ${CXX_COMP})" >> toolchain.cmake
   fi
-  echo "set(CMAKE_FIND_ROOT_PATH ${INSTALL_PREFIX})" >> toolchain.cmake
+  echo "set(CMAKE_FIND_ROOT_PATH \"${INSTALL_PREFIX}\")" >> toolchain.cmake
   echo "set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)" >> toolchain.cmake
   echo "set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)" >> toolchain.cmake
   echo "set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)" >> toolchain.cmake
