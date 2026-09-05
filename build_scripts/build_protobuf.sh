@@ -34,7 +34,17 @@ cmake -DCMAKE_BUILD_TYPE=Release \
 make -j"${JOBS}"
 make install
 # only when cross compiling
-if [[ -n ${CC_COMP:-} && ${CC_COMP} != gcc ]]; then
+# A full-path native compiler (e.g. /usr/bin/gcc) must not be treated as
+# a cross compiler (the original bug): compare basenames. A cross
+# toolchain can also be exposed under a plain "gcc" name (e.g.
+# /opt/cross/bin/gcc), so additionally compare the compiler's target
+# architecture against the build host; when the compiler cannot be
+# queried, the basename check alone decides.
+CC_COMP_BASENAME=$(basename "${CC_COMP}")
+CC_COMP_TARGET_ARCH=$("${CC_COMP}" -dumpmachine 2>/dev/null | cut -d- -f1)
+if [[ -n ${CC_COMP:-} ]] && \
+   { [[ ${CC_COMP_BASENAME} != gcc ]] || \
+     [[ -n ${CC_COMP_TARGET_ARCH} && ${CC_COMP_TARGET_ARCH} != "$(uname -m)" ]]; }; then
   rm -rf *
   echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
   if [[ -n ${CMAKE_TARGET_ARCH:-} ]]; then
