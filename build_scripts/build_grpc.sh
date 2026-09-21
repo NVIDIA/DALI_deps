@@ -52,7 +52,10 @@ done
 # for why this compares basename + target architecture rather than the raw CC_COMP string.
 CC_COMP_BASENAME=$(basename "${CC_COMP:-}")
 CC_COMP_TARGET_ARCH=$("${CC_COMP:-}" -dumpmachine 2>/dev/null | cut -d- -f1)
-GRPC_TARGET_CMAKE_OPTIONS=(-DgRPC_BUILD_GRPC_CPP_PLUGIN=ON)
+GRPC_TARGET_CMAKE_OPTIONS=(
+  -DgRPC_BUILD_CODEGEN=ON
+  -DgRPC_BUILD_GRPC_CPP_PLUGIN=ON
+)
 if [[ -n ${CC_COMP:-} ]] && \
    { [[ ${CC_COMP_BASENAME} != gcc ]] || \
      [[ -n ${CC_COMP_TARGET_ARCH} && ${CC_COMP_TARGET_ARCH} != "$(uname -m)" ]]; }; then
@@ -72,9 +75,12 @@ if [[ -n ${CC_COMP:-} ]] && \
   make -j"${JOBS}" grpc_cpp_plugin
   install -D -m 755 grpc_cpp_plugin "${HOST_INSTALL_PREFIX}/bin/grpc_cpp_plugin"
   popd
-  # The target plugin cannot run on the host and would require target libprotoc,
-  # which build_protobuf.sh intentionally omits when using the host protoc.
-  GRPC_TARGET_CMAKE_OPTIONS=(-DgRPC_BUILD_GRPC_CPP_PLUGIN=OFF)
+  # Target code generators cannot run on the host and require target libprotoc,
+  # which build_protobuf.sh intentionally omits when using host code generators.
+  GRPC_TARGET_CMAKE_OPTIONS=(
+    -DgRPC_BUILD_CODEGEN=OFF
+    -DgRPC_BUILD_GRPC_CPP_PLUGIN=OFF
+  )
 fi
 
 mkdir -p build
