@@ -52,7 +52,7 @@ done
 # for why this compares basename + target architecture rather than the raw CC_COMP string.
 CC_COMP_BASENAME=$(basename "${CC_COMP:-}")
 CC_COMP_TARGET_ARCH=$("${CC_COMP:-}" -dumpmachine 2>/dev/null | cut -d- -f1)
-GRPC_TARGET_CMAKE_OPTIONS=()
+GRPC_TARGET_CMAKE_OPTIONS=(-DgRPC_BUILD_GRPC_CPP_PLUGIN=ON)
 if [[ -n ${CC_COMP:-} ]] && \
    { [[ ${CC_COMP_BASENAME} != gcc ]] || \
      [[ -n ${CC_COMP_TARGET_ARCH} && ${CC_COMP_TARGET_ARCH} != "$(uname -m)" ]]; }; then
@@ -74,7 +74,7 @@ if [[ -n ${CC_COMP:-} ]] && \
   popd
   # The target plugin cannot run on the host and would require target libprotoc,
   # which build_protobuf.sh intentionally omits when using the host protoc.
-  GRPC_TARGET_CMAKE_OPTIONS+=(-DgRPC_BUILD_GRPC_CPP_PLUGIN=OFF)
+  GRPC_TARGET_CMAKE_OPTIONS=(-DgRPC_BUILD_GRPC_CPP_PLUGIN=OFF)
 fi
 
 mkdir -p build
