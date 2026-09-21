@@ -52,6 +52,7 @@ done
 # for why this compares basename + target architecture rather than the raw CC_COMP string.
 CC_COMP_BASENAME=$(basename "${CC_COMP:-}")
 CC_COMP_TARGET_ARCH=$("${CC_COMP:-}" -dumpmachine 2>/dev/null | cut -d- -f1)
+GRPC_TARGET_CMAKE_OPTIONS=()
 if [[ -n ${CC_COMP:-} ]] && \
    { [[ ${CC_COMP_BASENAME} != gcc ]] || \
      [[ -n ${CC_COMP_TARGET_ARCH} && ${CC_COMP_TARGET_ARCH} != "$(uname -m)" ]]; }; then
@@ -71,6 +72,9 @@ if [[ -n ${CC_COMP:-} ]] && \
   make -j"${JOBS}" grpc_cpp_plugin
   install -D -m 755 grpc_cpp_plugin "${HOST_INSTALL_PREFIX}/bin/grpc_cpp_plugin"
   popd
+  # The target plugin cannot run on the host and would require target libprotoc,
+  # which build_protobuf.sh intentionally omits when using the host protoc.
+  GRPC_TARGET_CMAKE_OPTIONS+=(-DgRPC_BUILD_GRPC_CPP_PLUGIN=OFF)
 fi
 
 mkdir -p build
@@ -98,6 +102,7 @@ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
       -DgRPC_BUILD_GRPC_PHP_PLUGIN=OFF \
       -DgRPC_BUILD_GRPC_PYTHON_PLUGIN=OFF \
       -DgRPC_BUILD_GRPC_RUBY_PLUGIN=OFF \
+      "${GRPC_TARGET_CMAKE_OPTIONS[@]}" \
       ..
 make -j"${JOBS}"
 make install
