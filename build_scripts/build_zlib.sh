@@ -18,6 +18,7 @@
 export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
 source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
 pushd "${ROOT_DIR}/third_party/zlib"
+patch -p1 < ${ROOT_DIR}/patches/zlib-CVE-2026-85091.patch
 mkdir -p build
 cd build
 

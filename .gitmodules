@@ -58,3 +58,6 @@
 [submodule "third_party/nlohmann_json"]
 	path = third_party/nlohmann_json
 	url = https://github.com/nlohmann/json
+[submodule "third_party/c-ares"]
+	path = third_party/c-ares
+	url = https://github.com/c-ares/c-ares

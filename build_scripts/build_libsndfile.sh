@@ -24,6 +24,7 @@ patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2024-50612.patch
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2025-56226-01-mpeg-l3-encode.patch
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2025-56226-02-sndfile.patch
 patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2026-37555.patch
+patch -p1 < ${ROOT_DIR}/patches/libsnd-CVE-2026-88386.patch
 mkdir -p build
 cd build
 echo "set(CMAKE_SYSTEM_NAME Linux)" > toolchain.cmake
@@ -49,6 +50,7 @@ echo 'set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")' >> toolchain.cmake
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
       -DBUILD_TESTING=OFF -DBUILD_REGTEST=OFF -DBUILD_PROGRAMS=OFF -DBUILD_EXAMPLES=OFF \
       -DBUILD_SHARED_LIBS=ON \
+      -DENABLE_MPEG=OFF \
       -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
       ..
 make -j"$(grep ^processor /proc/cpuinfo | wc -l)"

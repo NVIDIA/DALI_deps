@@ -21,8 +21,9 @@
 # Protobuf, Abseil (installed together with protobuf), zlib and OpenSSL are taken
 # from the install prefix rather than from gRPC's own submodules - building them
 # again here would install a second, differently versioned copy over the one the
-# rest of DALI's dependencies were compiled against. c-ares and re2 have no such
-# counterpart, so they do come from the submodules.
+# rest of DALI's dependencies were compiled against. c-ares comes from our own
+# third_party/c-ares submodule, so that we can bump the version faster than gRPC
+# upstream (in case of known CVEs). re2 comes from gRPC's submodule.
 export ROOT_DIR=$(realpath "${ROOT_DIR:-$(dirname "$(realpath "${BASH_SOURCE[0]}")")/..}")
 source "${ROOT_DIR}/build_scripts/validate_toolchain_env.sh"
 source "${ROOT_DIR}/build_scripts/generate_toolchain_file.sh"
@@ -33,14 +34,14 @@ JOBS=$(nproc)
 
 pushd "${ROOT_DIR}/third_party/grpc"
 
-# c-ares and re2 live in gRPC's own submodules and, unlike gRPC's proto
-# dependencies, have no download fallback in its CMake files. Both the recursive
+# re2 lives in gRPC's own submodule and, unlike gRPC's proto
+# dependencies, has no download fallback in its CMake files. The recursive
 # clone in README.rst and docker/Dockerfile.deps (NVIDIA/DALI) already bring
-# these in, so on the two documented checkout paths this loop never does
+# this in, so on the two documented checkout paths this loop never does
 # anything - it is deliberately kept anyway as cheap insurance (these two
 # submodules are tiny, unlike google-cloud-cpp) against a checkout that used a
 # plain, non-recursive `git submodule update --init`.
-for GRPC_SUBMODULE in third_party/cares/cares third_party/re2; do
+for GRPC_SUBMODULE in third_party/re2; do
   if [[ -z $(ls -A "${GRPC_SUBMODULE}" 2>/dev/null) ]]; then
     git submodule update --init --depth 1 "${GRPC_SUBMODULE}"
   fi
@@ -99,6 +100,7 @@ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=toolchain.cmake \
       -DgRPC_ABSL_PROVIDER=package \
       -DgRPC_SSL_PROVIDER=package \
       -DgRPC_CARES_PROVIDER=module \
+      -DCARES_ROOT_DIR=${ROOT_DIR}/third_party/c-ares \
       -DgRPC_RE2_PROVIDER=module \
       -DOPENSSL_ROOT_DIR=${INSTALL_PREFIX} \
       -DOPENSSL_USE_STATIC_LIBS=ON \
