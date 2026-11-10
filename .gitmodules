@@ -61,3 +61,6 @@
 [submodule "third_party/c-ares"]
 	path = third_party/c-ares
 	url = https://github.com/c-ares/c-ares
+[submodule "third_party/abseil-cpp"]
+	path = third_party/abseil-cpp
+	url = https://github.com/abseil/abseil-cpp

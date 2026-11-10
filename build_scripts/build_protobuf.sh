@@ -23,6 +23,8 @@ cd build
 
 JOBS=$(nproc)
 # Dprotobuf_FORCE_FETCH_DEPENDENCIES to ensure we don't use host dependencies
+# FETCHCONTENT_SOURCE_DIR_ABSL: use the abseil-cpp submodule (gRPC requires a newer abseil
+# than the one pinned by protobuf)
     CFLAGS="-fPIC" \
     CXXFLAGS="-fPIC -std=c++17" \
 cmake -DCMAKE_BUILD_TYPE=Release \
@@ -30,6 +32,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DBUILD_SHARED_LIBS=OFF \
       -Dprotobuf_BUILD_TESTS=OFF \
       -Dprotobuf_FORCE_FETCH_DEPENDENCIES=ON \
+      -DFETCHCONTENT_SOURCE_DIR_ABSL=${ROOT_DIR}/third_party/abseil-cpp \
       ..
 make -j"${JOBS}"
 make install
@@ -69,6 +72,7 @@ if [[ -n ${CC_COMP:-} ]] && \
         -DBUILD_SHARED_LIBS=OFF \
         -Dprotobuf_BUILD_TESTS=OFF \
         -Dprotobuf_FORCE_FETCH_DEPENDENCIES=ON \
+        -DFETCHCONTENT_SOURCE_DIR_ABSL=${ROOT_DIR}/third_party/abseil-cpp \
         -DWITH_PROTOC=${HOST_INSTALL_PREFIX}/bin/protoc \
         ..
   make -j"${JOBS}"
