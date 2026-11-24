@@ -32,7 +32,7 @@ cmake -DCMAKE_BUILD_TYPE=Release \
       -DBUILD_SHARED_LIBS=OFF \
       -Dprotobuf_BUILD_TESTS=OFF \
       -Dprotobuf_FORCE_FETCH_DEPENDENCIES=ON \
-      -DFETCHCONTENT_SOURCE_DIR_ABSL=${ROOT_DIR}/third_party/abseil-cpp \
+      -DFETCHCONTENT_SOURCE_DIR_ABSL="${ROOT_DIR}/third_party/abseil-cpp" \
       ..
 make -j"${JOBS}"
 make install
@@ -72,7 +72,7 @@ if [[ -n ${CC_COMP:-} ]] && \
         -DBUILD_SHARED_LIBS=OFF \
         -Dprotobuf_BUILD_TESTS=OFF \
         -Dprotobuf_FORCE_FETCH_DEPENDENCIES=ON \
-        -DFETCHCONTENT_SOURCE_DIR_ABSL=${ROOT_DIR}/third_party/abseil-cpp \
+        -DFETCHCONTENT_SOURCE_DIR_ABSL="${ROOT_DIR}/third_party/abseil-cpp" \
         -DWITH_PROTOC=${HOST_INSTALL_PREFIX}/bin/protoc \
         ..
   make -j"${JOBS}"
