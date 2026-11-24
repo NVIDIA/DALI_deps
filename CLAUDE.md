@@ -61,10 +61,11 @@ GCS client is built out of the ~200 libraries in the SDK. google-cloud-cpp alway
 why gRPC and opentelemetry-cpp are dependencies even though the GCS client itself talks
 REST.
 
-Abseil is not a submodule - `build_protobuf.sh` fetches and installs it as part of
-protobuf, and `build_grpc.sh` reuses that copy (along with protobuf, zlib and OpenSSL)
-via `gRPC_*_PROVIDER=package` so that no second, differently versioned copy is installed
-over it. The googleapis protobuf definitions are downloaded by google-cloud-cpp while
+Abseil comes from `third_party/abseil-cpp`. `build_protobuf.sh` builds and installs it
+together with protobuf, passing it via `FETCHCONTENT_SOURCE_DIR_ABSL`. This overrides the
+Abseil version protobuf pins, because gRPC needs a newer one. `build_grpc.sh` then reuses
+that installed Abseil (along with protobuf, zlib and OpenSSL) via `gRPC_*_PROVIDER=package`,
+so no second, differently versioned copy is installed over it. The googleapis protobuf definitions are downloaded by google-cloud-cpp while
 configuring; `GOOGLE_CLOUD_CPP_OVERRIDE_GOOGLEAPIS_URL` points that at a local copy.
 
 ## Patches
